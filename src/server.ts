@@ -1,9 +1,10 @@
 import http from 'http';
 import bodyParser from 'body-parser';
 import express from 'express';
+import path from "path";
 import logging from './config/logging';
 import config from './config/config';
-import sampleRoutes from './routes/sample';
+import ServerRoutes from './routes/route';
 
 const NAMESPACE = 'Server';
 const router = express();
@@ -20,6 +21,13 @@ router.use((req, res, next) => {
     
     next();
 });
+
+
+router.set('views', path.join(__dirname, './views'));
+router.set('view engine', 'ejs');
+
+router.use(express.static(path.join(__dirname, "public")));
+
 
 /** Parse the body of the request */
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -39,15 +47,17 @@ router.use((req, res, next) => {
 });
 
 /** Routes go here */
-router.use('/api/sample', sampleRoutes);
+router.use('/', ServerRoutes);
 
 /** Error handling */
 router.use((req, res, next) => {
     const error = new Error('Not found');
 
-    res.status(404).json({
-        message: error.message
-    });
+    res.status(404).render("404")
+
+    // res.status(404).json({
+    //     message: error.message
+    // });
 });
 
 const httpServer = http.createServer(router);
