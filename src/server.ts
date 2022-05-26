@@ -8,6 +8,8 @@ import config from './config/config';
 import ServerRoutes from './routes/route';
 import  *  as  data  from  './db.json';
 
+console.log(data);
+
 
 
 const NAMESPACE = 'Server';
