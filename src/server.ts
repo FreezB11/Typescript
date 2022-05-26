@@ -6,6 +6,7 @@ import path from "path";
 import logging from './config/logging';
 import config from './config/config';
 import ServerRoutes from './routes/route';
+import  *  as  data  from  './db.json';
 
 
 
