@@ -1,4 +1,5 @@
 import http from 'http';
+import fs from 'fs';
 // import userdb from './data/db.json';
 import bodyParser from 'body-parser';
 import express from 'express';
@@ -6,9 +7,21 @@ import path from "path";
 import logging from './config/logging';
 import config from './config/config';
 import ServerRoutes from './routes/route';
-import  *  as  data  from  './db.json';
+import  *  as  data  from  '../data/db.json';
 
-console.log(data);
+// console.log(data);
+
+let student = { 
+    name: 'Mike',
+    age: 23, 
+    gender: 'Male',
+    department: 'English',
+    car: 'Honda' 
+};
+
+let data2 = JSON.stringify(student);
+
+// fs.writeFileSync('./data/db.json', data2);
 
 
 
