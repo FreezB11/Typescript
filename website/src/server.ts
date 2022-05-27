@@ -10,19 +10,27 @@ import { Schema, model} from 'mongoose';
 
 connect;
 
-interface IUser {
+interface User {
     name: string;
     email: string;
     avatar?: string;
+    address:{
+        street: string,
+        city:string,
+    }
 }
 
-const userSchema = new Schema<IUser>({
+const userSchema = new Schema<User>({
     name: { type: String, required: true },
     email: { type: String, required: true },
-    avatar: String
+    avatar: String,
+    address:{
+        street: {type:String,required:true},
+        city: {type:String, required: true}
+    }
 });
 
-const User = model<IUser>('User', userSchema);
+const User = model<User>('User', userSchema);
 
 run().catch(err => console.log(err));
 
@@ -32,10 +40,18 @@ async function run() {
   const user = new User({
     name: 'Bill',
     email: 'bill@initech.com',
-    avatar: 'https://i.imgur.com/dM7Thhn.png'
+    avatar: 'https://i.imgur.com/dM7Thhn.png',
+    address:{
+        street:"main street",
+        city:"banglore"
+    },
   });
-  await user.save();
 
+ 
+
+
+  await user.save();
+  console.log(user);
 //   console.log(user.email); // 'bill@initech.com'
 }
 
