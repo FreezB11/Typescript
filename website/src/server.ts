@@ -7,6 +7,8 @@ import config from './config/config';
 import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 
+connect;
+
 const NAMESPACE = 'Server';
 const router = express();
 
