@@ -5,6 +5,7 @@ import path from "path";
 import logging from './config/logging';
 import config from './config/config';
 import HomeRoutes from './routes/homerouter';
+import connect = require("./database/database")
 
 const NAMESPACE = 'Server';
 const router = express();
@@ -46,10 +47,10 @@ router.use((req, res, next) => {
     next();
 });
 
+
 /** Routes go here */
 router.use('/', HomeRoutes);
 
-/** Error handling */
 router.use((req, res, next) => {
     const error = new Error('Not found');
 

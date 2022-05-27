@@ -12,17 +12,6 @@ router.get('/',(req,res) =>{
     res.render("index")
 });
 
-router.get('/maths',(req,res) =>{
-    res.render("maths")
-});
-
-router.get('/physics',(req,res) =>{
-    res.render("physics")
-});
-
-router.get('/chemistry',(req,res) =>{
-    res.render("che")
-});
 
 router.get('/help', (req,res) =>{
     res.render("help")
