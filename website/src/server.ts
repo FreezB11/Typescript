@@ -6,8 +6,39 @@ import logging from './config/logging';
 import config from './config/config';
 import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
+import { Schema, model} from 'mongoose';
 
 connect;
+
+interface IUser {
+    name: string;
+    email: string;
+    avatar?: string;
+}
+
+const userSchema = new Schema<IUser>({
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    avatar: String
+});
+
+const User = model<IUser>('User', userSchema);
+
+run().catch(err => console.log(err));
+
+async function run() {
+  // 4. Connect to MongoDB
+
+  const user = new User({
+    name: 'Bill',
+    email: 'bill@initech.com',
+    avatar: 'https://i.imgur.com/dM7Thhn.png'
+  });
+  await user.save();
+
+//   console.log(user.email); // 'bill@initech.com'
+}
+
 
 const NAMESPACE = 'Server';
 const router = express();
