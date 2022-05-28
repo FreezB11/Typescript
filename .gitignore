@@ -1,6 +1,6 @@
 node_modules
 build/**/*
 
-src/database
+Ts/src/database
 
 package-lock.json
