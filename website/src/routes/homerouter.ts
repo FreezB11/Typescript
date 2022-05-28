@@ -28,6 +28,13 @@ router.post('/help',(req,res)=>{
     const password = req.body.password;
 
     const hashed = bcrypt.hashSync(password, 10);
+    const verified = bcrypt.compareSync(password, hashed)
+
+    if (verified){
+        console.log('verified');
+    }else{
+        console.log('not verified');
+    }
     
 
     console.log(name,email,hashed);
