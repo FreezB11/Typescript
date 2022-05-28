@@ -47,7 +47,7 @@ async function run() {
  
 
 
-  await user.save();
+//   await user.save();
   console.log(user);
 //   console.log(user.email); // 'bill@initech.com'
 }
