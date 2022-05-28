@@ -4,6 +4,8 @@ import controller from '../controllers/controller';
 
 const router = express.Router();
 
+router.use(express.urlencoded({extended:false}))
+
 router.get('/ping', controller.serverHealthCheck);
 
 
@@ -19,6 +21,11 @@ router.get('/help', (req,res) =>{
 
 router.post('/help',(req,res)=>{
 
+    const name = req.body.name;
+    const email = req.body.email;
+    console.log(name,email);
+
+    res.send("posted");
 });
 
 router.get('/:id',(req,res) =>{

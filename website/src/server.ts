@@ -10,6 +10,8 @@ import { Schema, model} from 'mongoose';
 
 connect;
 
+
+
 interface User {
     name: string;
     email: string;
