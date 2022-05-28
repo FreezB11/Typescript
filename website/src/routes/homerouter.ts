@@ -1,6 +1,7 @@
 
 import express from 'express';
 import controller from '../controllers/controller';
+const bcrypt = require('bcrypt');
 
 const router = express.Router();
 
