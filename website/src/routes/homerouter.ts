@@ -1,4 +1,5 @@
 
+import { hash } from 'bcrypt';
 import express from 'express';
 import controller from '../controllers/controller';
 const bcrypt = require('bcrypt');
@@ -24,7 +25,12 @@ router.post('/help',(req,res)=>{
 
     const name = req.body.name;
     const email = req.body.email;
-    console.log(name,email);
+    const password = req.body.password;
+
+    const hashed = bcrypt.hashSync(password, 10);
+    
+
+    console.log(name,email,hashed);
 
     res.send("posted");
 });
