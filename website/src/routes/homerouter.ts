@@ -17,4 +17,12 @@ router.get('/help', (req,res) =>{
     res.render("help")
 });
 
+router.post('/help',(req,res)=>{
+
+});
+
+router.get('/:id',(req,res) =>{
+    res.send(`${req.params.id}`)
+});
+
 export = router;
