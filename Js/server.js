@@ -2,6 +2,7 @@ const express = require('express');
 const server = express()
 
 
+server.set('views', path.join(__dirname, './views'));
 server.set('view engine', 'ejs');
 
 server.get('/',(req,res)=>{
