@@ -47,7 +47,6 @@ async function run() {
 
 const NAMESPACE = 'Server';
 
-
 const router = express();
 
 /** Log the request */
@@ -66,7 +65,6 @@ router.use((req, res, next) => {
 
 router.set('views', path.join(__dirname, './views'));
 router.set('view engine', 'ejs');
-
 router.use(express.static(path.join(__dirname, "public")));
 
 
