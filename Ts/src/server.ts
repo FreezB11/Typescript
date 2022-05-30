@@ -53,15 +53,12 @@ const router = express();
 router.use((req, res, next) => {
     /** Log the req */
     logging.info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
-
     res.on('finish', () => {
         /** Log the res */
         logging.info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`);
     })
-    
     next();
 });
-
 
 router.set('views', path.join(__dirname, './views'));
 router.set('view engine', 'ejs');
@@ -79,7 +76,6 @@ router.use((req, res, next) => {
         res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
         return res.status(200).json({});
     }
-
     next();
 });
 
