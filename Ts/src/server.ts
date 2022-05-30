@@ -83,7 +83,6 @@ router.use((req, res, next) => {
     next();
 });
 
-
 /** Routes go here */
 router.use('/', HomeRoutes);
 
