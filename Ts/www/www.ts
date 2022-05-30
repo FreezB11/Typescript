@@ -7,6 +7,8 @@ const NAMESPACE = 'Server';
 
 const httpServer = http.createServer(router);
 
+
+/** Log the request */
 router.use((req, res, next) => {
     /** Log the req */
     logging.info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
