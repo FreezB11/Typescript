@@ -66,8 +66,6 @@ router.use((req, res, next) => {
 router.set('views', path.join(__dirname, './views'));
 router.set('view engine', 'ejs');
 router.use(express.static(path.join(__dirname, "public")));
-
-
 /** Parse the body of the request */
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
