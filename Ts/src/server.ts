@@ -41,10 +41,6 @@ async function run() {
         city:"banglore"
     },
   });
-
- 
-
-
 //   await user.save();
   console.log(user);
 //   console.log(user.email); // 'bill@initech.com'
