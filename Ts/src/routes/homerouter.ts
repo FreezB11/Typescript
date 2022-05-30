@@ -21,26 +21,7 @@ router.get('/help', (req,res) =>{
     res.render("help")
 });
 
-router.post('/help',(req,res)=>{
-
-    const name = req.body.name;
-    const email = req.body.email;
-    const password = req.body.password;
-
-    const hashed = bcrypt.hashSync(password, 10);
-    const verified = bcrypt.compareSync(password, hashed)
-
-    if (verified){
-        console.log('verified');
-    }else{
-        console.log('not verified');
-    }
-    
-
-    console.log(name,email,hashed);
-
-    res.send("posted");
-});
+router.post('/help',controller.StoreDataToDB);
 
 router.get('/:id',(req,res) =>{
     res.send(`${req.params.id}`)
