@@ -1,9 +1,7 @@
-import http from 'http';
 import bodyParser from 'body-parser';
 import express from 'express';
 import path from "path";
 import logging from './config/logging';
-import config from './config/config';
 import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 import { Schema, model} from 'mongoose';
