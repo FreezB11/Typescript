@@ -1,7 +1,7 @@
 import { hash } from 'bcrypt';
 import express from 'express';
 import controller from '../controllers/controller';
-import test from '../test/test';
+import index from '../views/index';
 const bcrypt = require('bcrypt');
 const router = express.Router();
 
@@ -12,7 +12,7 @@ router.get('/ping', controller.serverHealthCheck);
 
 
 
-router.get('/', test.index);
+router.get('/', index.index);
 
 router.get('/help', (req,res) =>{
     res.render("help")
