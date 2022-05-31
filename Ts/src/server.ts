@@ -30,14 +30,9 @@ async function run() {
     name: 'Bill',
     email: 'bill@initech.com',
     avatar: 'https://i.imgur.com/dM7Thhn.png',
-    address:{
-        street:"main street",
-        city:"banglore"
-    },
   });
 //   await user.save();
   console.log(user);
-//   console.log(user.email); // 'bill@initech.com'
 }
 
 const NAMESPACE = 'Server';
