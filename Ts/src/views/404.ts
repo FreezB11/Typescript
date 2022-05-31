@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+import { NextFunction, Request, Response } from 'express';
+
+
+const index = (req: Request, res: Response, next: NextFunction) => {
+    return res.send(`
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,3 +16,7 @@
     
 </body>
 </html>
+    `)
+};
+
+export default {index} 
