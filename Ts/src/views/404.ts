@@ -2,7 +2,10 @@ import { NextFunction, Request, Response } from 'express';
 
 
 const notfound = (req: Request, res: Response, next: NextFunction) => {
-    return res.send(`
+    const error = new Error('Not found');
+
+
+    return res.status(404).send(`
     <!DOCTYPE html>
 <html lang="en">
 <head>

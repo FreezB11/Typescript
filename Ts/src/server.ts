@@ -72,14 +72,6 @@ router.use((req, res, next) => {
 /** Routes go here */
 router.use('/', HomeRoutes);
 
-router.use((req, res, next) => {
-    const error = new Error('Not found');
 
-    res.status(404).render("404")
-
-    // res.status(404).json({
-    //     message: error.message
-    // });
-});
 
 export = router;
