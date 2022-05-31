@@ -1,7 +1,9 @@
-import { hash } from 'bcrypt';
+// import { hash } from 'bcrypt';
 import express from 'express';
 import controller from '../controllers/controller';
 import index from '../views/index';
+import help from '../views/help';
+import err from '../views/404'
 const bcrypt = require('bcrypt');
 const router = express.Router();
 

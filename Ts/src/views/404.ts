@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 
 
-const index = (req: Request, res: Response, next: NextFunction) => {
+const notfound = (req: Request, res: Response, next: NextFunction) => {
     return res.send(`
     <!DOCTYPE html>
 <html lang="en">
@@ -19,4 +19,4 @@ const index = (req: Request, res: Response, next: NextFunction) => {
     `)
 };
 
-export default {index} 
+export default {notfound} 
