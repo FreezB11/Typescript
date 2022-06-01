@@ -20,7 +20,7 @@
     .
     <br>
     <h4># day1 project setup</h4>
-    <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-496311860); mask: url(#sparkline-496311860)"></rect>
+    .
     .
     <br>
     <h4># day2 setting up routes and controllers</h4>
