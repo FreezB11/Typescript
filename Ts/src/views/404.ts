@@ -16,7 +16,7 @@ const notfound = (req: Request, res: Response, next: NextFunction) => {
     <title>Document</title>
 </head>
 <body>
-    
+    error
 </body>
 </html>
     `)
