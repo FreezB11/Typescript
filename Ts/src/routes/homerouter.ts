@@ -12,6 +12,8 @@ router.use(express.urlencoded({extended:false}))
 router.get('/ping', controller.serverHealthCheck);
 
 router.get('/', index.index);
+router.get('/login');
+router.get('/register')
 
 router.get('/help', help.help);
 
