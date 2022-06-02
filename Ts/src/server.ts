@@ -9,6 +9,7 @@ import httpServer from '../www/www'
 
 import * as socketio from "socket.io";
 
+let io = require("socket.io")(httpServer);
 
 
 
