@@ -47,8 +47,6 @@ io.on("connection", (socket) => {
 
 
 
-
-
 connect;
 
 interface User {
