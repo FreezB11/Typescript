@@ -7,13 +7,9 @@ import connect = require("./database/database")
 import { Schema, model} from 'mongoose';
 import httpServer from '../www/www'
 
-import * as socketio from "socket.io";
 
-let io = require("socket.io")(httpServer);
 
-io.on("connection", function(socket: any) {
-  console.log("a user connected");
-});
+
 
 
 connect;
