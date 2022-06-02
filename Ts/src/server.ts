@@ -7,7 +7,7 @@ import connect = require("./database/database")
 import { Schema, model} from 'mongoose';
 import httpServer from '../www/www'
 
-import { Server } from "socket.io";
+import ioserver, { Server } from "socket.io";
 
 
 
