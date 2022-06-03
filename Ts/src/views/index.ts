@@ -30,9 +30,9 @@ const index = (req: Request, res: Response, next: NextFunction) => {
 
 <section class="home">
 <video class="video-slide active" src="video.mp4" autoplay muted loop></video>
-<video class="video-slide" src="2.mp4" autoplay muted loop></video>
-<video class="video-slide" src="3.mp4" autoplay muted loop></video>
-<video class="video-slide" src="4.mp4" autoplay muted loop></video>
+<video class="video-slide" src="video2.mp4" autoplay muted loop></video>
+<video class="video-slide" src="video3.mp4" autoplay muted loop></video>
+<video class="video-slide" src="video4.mp4" autoplay muted loop></video>
 <video class="video-slide" src="5.mp4" autoplay muted loop></video>
 <div class="content active">
   <h1>Wonderful.<br><span>Island</span></h1>
