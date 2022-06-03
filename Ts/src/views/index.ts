@@ -29,7 +29,7 @@ const index = (req: Request, res: Response, next: NextFunction) => {
 </header>
 
 <section class="home">
-<video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+<video class="video-slide active" src="video.mp4" autoplay muted loop></video>
 <video class="video-slide" src="2.mp4" autoplay muted loop></video>
 <video class="video-slide" src="3.mp4" autoplay muted loop></video>
 <video class="video-slide" src="4.mp4" autoplay muted loop></video>
