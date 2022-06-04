@@ -64,13 +64,6 @@ const index = (req: Request, res: Response, next: NextFunction) => {
   <a href="#"><i class="fab fa-instagram"></i></a>
   <a href="#"><i class="fab fa-twitter"></i></a>
 </div>
-<div class="slider-navigation">
-  <div class="nav-btn active"></div>
-  <div class="nav-btn"></div>
-  <div class="nav-btn"></div>
-  <div class="nav-btn"></div>
-  <div class="nav-btn"></div>
-</div>
 </section>
 
 <script type="text/javascript">
