@@ -155,7 +155,7 @@ section{
   object-fit: cover;
 }
 
-.slider-navigation{
+/* .slider-navigation{
   z-index: 888;
   position: relative;
   display: flex;
@@ -184,20 +184,10 @@ section{
 }
 
 .slider-navigation .nav-btn:hover{
-  transform: scale(1.2);
-}
+  transform: scale(1.2); */
+/* } */
 
-.video-slide{
-  position: absolute;
-  width: 100%;
-  clip-path: circle(0% at 0 50%);
-}
 
-.video-slide.active{
-  clip-path: circle(150% at 0 50%);
-  transition: 2s ease;
-  transition-property: clip-path;
-}
 
 @media (max-width: 1040px){
   header{
