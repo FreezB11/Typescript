@@ -418,76 +418,7 @@ button:hover::after,
   font-size: 0.875rem;
 }
 
-.articles {
-  background: #000000;
-  padding: 6.25rem 0;
-}
 
-.articles .articles-grid {
-  display: grid;
-  gap: 1.875rem;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 40em) {
-  .articles .articles-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 64em) {
-  .articles .articles-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.articles .article {
-  background: rgb(0, 0, 0);
-  border-radius: 0.3125rem;
-  box-shadow: 0 0.1875rem 0.75rem rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease-in-out;
-  overflow: hidden;
-}
-
-.articles .article:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
-.articles .article-image {
-  height: 12.5rem;
-}
-
-.articles .article-image img {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.articles .article-text {
-  padding: 1.875rem 1.5625rem 2.75rem 1.5625rem;
-}
-
-@media (min-width: 40em) {
-  .articles .article-text {
-    padding: 1.875rem 1.5625rem 1.5625rem 1.5625rem;
-  }
-}
-
-.articles .article-author span {
-  display: block;
-  font-size: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
-.articles .article-title h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  line-height: 1.2;
-  transition: color 0.2s ease-in-out;
-}
 
 .articles .article-title h3:hover {
   color: #31d35c;
