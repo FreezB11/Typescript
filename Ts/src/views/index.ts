@@ -13,7 +13,6 @@ const index = (req: Request, res: Response, next: NextFunction) => {
     <title>0neN0TE</title>
 </head>
 <body>
-
 <div class="overlay fade-out"></div>
 <!-- Header -->
 <header class="header">
