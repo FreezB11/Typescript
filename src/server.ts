@@ -9,6 +9,8 @@ import httpServer from '../www/www'
 
 import { Server } from "socket.io";
 
+const io = new Server(httpServer);
+
 connect;
 
 interface User {
