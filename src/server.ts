@@ -6,11 +6,6 @@ import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 import { Schema, model} from 'mongoose';
 
-
-
-
-
-
 connect;
 
 interface User {
