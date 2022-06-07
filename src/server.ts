@@ -5,11 +5,12 @@ import logging from './config/logging';
 import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 import userSchema,{User,model} from './database/schema'
-import httpServer = require('../www/www');
 import * as socketIO from 'socket.io'
 import cors from 'cors'
 
 connect;
+
+const httpServer = http.createServer(router);
 
 const User = model<User>('User', userSchema);
 
