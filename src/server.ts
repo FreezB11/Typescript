@@ -62,8 +62,4 @@ router.use((req, res, next) => {
 /** Routes go here */
 router.use('/', HomeRoutes);
 
-
-
-
-
 export = router;
