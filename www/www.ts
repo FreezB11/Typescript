@@ -1,5 +1,5 @@
 import router from "../src/server";
-import http from 'http';
+import * as http from 'http';
 import logging from'../src/config/logging';
 import config from '../src/config/config';
 

@@ -1,10 +1,15 @@
 import bodyParser from 'body-parser';
-import express from 'express';
+import express, { Express, Request, Response } from 'express';
 import path from "path";
 import logging from './config/logging';
 import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 import { Schema, model} from 'mongoose';
+
+import * as socketio from 'socket.io'
+import cors from 'cors'
+
+
 
 connect;
 
