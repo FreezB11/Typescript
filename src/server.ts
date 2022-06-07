@@ -8,8 +8,7 @@ import { Schema, model} from 'mongoose';
 import httpServer = require('../www/www');
 
 
-import { Userid, Message, Session } from './types'
-import { getUniqueUsersOnlineByUsername } from './utilities'
+
 
 import * as socketIO from 'socket.io'
 import cors from 'cors'
