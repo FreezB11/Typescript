@@ -30,10 +30,6 @@ const NAMESPACE = 'Server';
 
 const router = express();
 
-
-
-
-
 /** Log the request */
 router.use((req, res, next) => {
     /** Log the req */
