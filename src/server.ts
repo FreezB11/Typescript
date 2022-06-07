@@ -11,8 +11,6 @@ import cors from 'cors'
 
 connect;
 
-
-
 const User = model<User>('User', userSchema);
 
 run().catch(err => console.log(err));
