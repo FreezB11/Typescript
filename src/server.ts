@@ -57,6 +57,10 @@ const io: socketio.Server = new socketio.Server(httpServer, {
 
 router.use(cors())
 
+let messages: Message[] = []
+let users: Userid[] = []
+let activeUserSessions: Session[] = []
+
 /** Log the request */
 router.use((req, res, next) => {
     /** Log the req */
