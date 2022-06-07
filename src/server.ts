@@ -34,9 +34,6 @@ const router = express();
 
 router.use(cors())
 
-
-
-
 /** Log the request */
 router.use((req, res, next) => {
     /** Log the req */
