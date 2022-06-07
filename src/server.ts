@@ -9,8 +9,6 @@ import httpServer = require('../www/www');
 import * as socketIO from 'socket.io'
 import cors from 'cors'
 
-
-
 connect;
 
 const User = model<User>('User', userSchema);
