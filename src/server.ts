@@ -5,6 +5,7 @@ import logging from './config/logging';
 import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 import { Schema, model} from 'mongoose';
+import httpServer = require('../www/www');
 
 import * as socketio from 'socket.io'
 import cors from 'cors'
@@ -43,6 +44,14 @@ async function run() {
 const NAMESPACE = 'Server';
 
 const router = express();
+
+const io: socketio.Server = new socketio.Server(httpServer, {
+  cors: {
+    origin: 'http://localhost:3000',
+    credentials: true,
+  },
+})
+
 
 /** Log the request */
 router.use((req, res, next) => {
