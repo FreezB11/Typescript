@@ -1,7 +1,6 @@
 node_modules
 build/**/*
-
-
+test
 Ts/src/database
 
 package-lock.json
