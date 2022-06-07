@@ -32,7 +32,7 @@ const router = express();
 
 
 
-router.use(cors())
+
 
 /** Log the request */
 router.use((req, res, next) => {
