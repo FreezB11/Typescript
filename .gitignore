@@ -2,6 +2,7 @@ node_modules
 build/**/*
 test
 chat
+server.ts
 Ts/src/database
 
 package-lock.json
