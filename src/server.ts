@@ -4,7 +4,7 @@ import path from "path";
 import logging from './config/logging';
 import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
-import { Schema, model} from 'mongoose';
+
 import httpServer = require('../www/www');
 import * as socketIO from 'socket.io'
 import cors from 'cors'
@@ -12,18 +12,6 @@ import cors from 'cors'
 
 
 connect;
-
-interface User {
-    name: string;
-    email: string;
-    avatar?: string;
-}
-
-const userSchema = new Schema<User>({
-    name: { type: String, required: true },
-    email: { type: String, required: true },
-    avatar: String,
-});
 
 const User = model<User>('User', userSchema);
 
