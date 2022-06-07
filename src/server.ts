@@ -6,10 +6,6 @@ import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 import { Schema, model} from 'mongoose';
 import httpServer = require('../www/www');
-
-
-
-
 import * as socketIO from 'socket.io'
 import cors from 'cors'
 
