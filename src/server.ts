@@ -7,6 +7,9 @@ import connect = require("./database/database")
 import { Schema, model} from 'mongoose';
 import httpServer = require('../www/www');
 
+import { Userid, Message, Session } from './types'
+import { getUniqueUsersOnlineByUsername } from './utilities'
+
 import * as socketio from 'socket.io'
 import cors from 'cors'
 
@@ -52,6 +55,7 @@ const io: socketio.Server = new socketio.Server(httpServer, {
   },
 })
 
+router.use(cors())
 
 /** Log the request */
 router.use((req, res, next) => {
