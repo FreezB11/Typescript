@@ -6,6 +6,7 @@ import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 import { Schema, model} from 'mongoose';
 import httpServer = require('../www/www');
+import { Socket } from 'socket.io-client';
 
 import { Userid, Message, Session } from './types'
 import { getUniqueUsersOnlineByUsername } from './utilities'
