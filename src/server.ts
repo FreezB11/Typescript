@@ -61,6 +61,14 @@ let messages: Message[] = []
 let users: Userid[] = []
 let activeUserSessions: Session[] = []
 
+router.get('/api/messages', (request: Request, response: Response) => {
+  response.send({ messages })
+})
+
+router.get('/api/users', (request: Request, response: Response) => {
+  response.send({ users })
+})
+
 /** Log the request */
 router.use((req, res, next) => {
     /** Log the req */
@@ -90,6 +98,11 @@ router.use((req, res, next) => {
     }
     next();
 });
+
+
+io.on('connection', (socket) => {
+  
+})
 
 
 
