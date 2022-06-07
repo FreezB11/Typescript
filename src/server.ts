@@ -6,12 +6,12 @@ import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 import { Schema, model} from 'mongoose';
 import httpServer = require('../www/www');
-import { Socket } from 'socket.io-client';
+
 
 import { Userid, Message, Session } from './types'
 import { getUniqueUsersOnlineByUsername } from './utilities'
 
-import * as socketio from 'socket.io'
+import * as socketIO from 'socket.io'
 import cors from 'cors'
 
 
@@ -49,26 +49,12 @@ const NAMESPACE = 'Server';
 
 const router = express();
 
-const io: socketio.Server = new socketio.Server(httpServer, {
-  cors: {
-    origin: 'http://localhost:3000',
-    credentials: true,
-  },
-})
+
 
 router.use(cors())
 
-let messages: Message[] = []
-let users: Userid[] = []
-let activeUserSessions: Session[] = []
 
-router.get('/api/messages', (request: Request, response: Response) => {
-  response.send({ messages })
-})
 
-router.get('/api/users', (request: Request, response: Response) => {
-  response.send({ users })
-})
 
 /** Log the request */
 router.use((req, res, next) => {
@@ -101,9 +87,6 @@ router.use((req, res, next) => {
 });
 
 
-io.on('connection', (socket) => {
-  
-})
 
 
 
