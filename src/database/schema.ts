@@ -12,5 +12,6 @@ const userSchema = new Schema<User>({
     avatar: String,
 });
 
-export default {userSchema}
+export default userSchema;
+export{User, model}
 
