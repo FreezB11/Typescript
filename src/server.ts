@@ -1,6 +1,7 @@
 import bodyParser from 'body-parser';
 import express, { Express, Request, Response } from 'express';
 import path from "path";
+import * as http from 'http';
 import logging from './config/logging';
 import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
@@ -10,7 +11,7 @@ import cors from 'cors'
 
 connect;
 
-const httpServer = http.createServer(router);
+
 
 const User = model<User>('User', userSchema);
 
@@ -30,6 +31,7 @@ async function run() {
 const NAMESPACE = 'Server';
 
 const router = express();
+const httpServer = http.createServer(router);
 
 /** Log the request */
 router.use((req, res, next) => {
@@ -63,4 +65,4 @@ router.use((req, res, next) => {
 /** Routes go here */
 router.use('/', HomeRoutes);
 
-export = router;
+export = router; httpServer;
