@@ -26,6 +26,10 @@
     .
     <br>
     <h4># day4 trid to setup login setup</h4>
+    <br>
+    trying to setup socket
+    
+
     .
     .
     <br>
