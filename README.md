@@ -31,9 +31,9 @@
     trying to setup socket
     
 
+    
     .
-    .
-    <br>
+
     <link>sockets reference : https://sbcode.net/tssock/server-connect-disconnect/</link>
 </body>
 </html>
