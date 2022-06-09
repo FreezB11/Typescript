@@ -6,9 +6,6 @@ import logging from './config/logging';
 import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 import userSchema,{User,model} from './database/schema'
-import { io } from "socket.io-client";
-
-const socket = io();
 
 connect;
 
