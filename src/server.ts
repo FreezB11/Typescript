@@ -37,6 +37,10 @@ io.on("connection",()=>{
   console.log("useer connected");
 })
 
+//const ws = "http://localhost:6900/"
+
+const socket = socketIO();
+
 /** Log the request */
 router.use((req, res, next) => {
     /** Log the req */
