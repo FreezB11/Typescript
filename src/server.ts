@@ -1,14 +1,16 @@
 import bodyParser from 'body-parser';
 import express, { Express, Request, Response } from 'express';
 import path from "path";
-import logging from './config/logging';
 import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 import userSchema,{User,model} from './database/schema'
 import { Server } from "socket.io";
 import socketIO from "socket.io-client";
 import cors from "cors";
-import httpServer from "../www/www"
+import * as http from 'http';
+import logging from'../src/config/logging';
+import config from '../src/config/config';
+
 
 connect;
 
@@ -27,9 +29,13 @@ async function run() {
   console.log(user);
 }
 
-const NAMESPACE = 'Server';
+
 
 const router = express();
+
+const httpServer = http.createServer(router);
+
+const NAMESPACE = 'Server';
 
 
 router.use(cors);
@@ -85,4 +91,4 @@ router.use((req, res, next) => {
 /** Routes go here */
 router.use('/', HomeRoutes);
 
-export = router; httpServer;
+httpServer.listen(config.server.port, () => logging.info(NAMESPACE, `Server is running ${config.server.hostname}:${config.server.port}`));
