@@ -34,7 +34,12 @@ const httpServer = http.createServer(router);
 
 router.use(cors);
 
-const io = new Server(httpServer);
+const io = new Server(httpServer,{
+  cors:{
+    origin:"*",
+    methods:["GET","POST"],
+  },
+});
 
 io.on("connection",()=>{
   console.log("useer connected");
