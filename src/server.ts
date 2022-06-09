@@ -1,7 +1,6 @@
 import bodyParser from 'body-parser';
 import express, { Express, Request, Response } from 'express';
 import path from "path";
-import * as http from 'http';
 import logging from './config/logging';
 import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
@@ -9,6 +8,7 @@ import userSchema,{User,model} from './database/schema'
 import { Server } from "socket.io";
 import socketIO from "socket.io-client";
 import cors from "cors";
+import httpServer from "../www/www"
 
 connect;
 
@@ -30,7 +30,7 @@ async function run() {
 const NAMESPACE = 'Server';
 
 const router = express();
-const httpServer = http.createServer(router);
+
 
 router.use(cors);
 
@@ -43,11 +43,15 @@ const io = new Server(httpServer,{
 
 io.on("connection",()=>{
   console.log("useer connected");
+
+  socket.on("disconnect",()=>{
+    console.log("useer disconnected");
+  })
 })
 
-//const ws = "http://localhost:6900/"
+const ws = "http://localhost:6900/"
 
-const socket = socketIO();
+const socket = socketIO(ws);
 
 /** Log the request */
 router.use((req, res, next) => {
