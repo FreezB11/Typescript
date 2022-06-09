@@ -32,6 +32,10 @@ const httpServer = http.createServer(router);
 
 const io = new Server(httpServer);
 
+io.on("connection",()=>{
+  console.log("useer connected");
+})
+
 /** Log the request */
 router.use((req, res, next) => {
     /** Log the req */
