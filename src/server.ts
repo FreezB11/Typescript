@@ -32,6 +32,8 @@ const NAMESPACE = 'Server';
 const router = express();
 const httpServer = http.createServer(router);
 
+router.use(cors);
+
 const io = new Server(httpServer);
 
 io.on("connection",()=>{
