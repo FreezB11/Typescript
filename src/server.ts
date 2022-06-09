@@ -97,7 +97,7 @@ router.use((req, res, next) => {
 //   },
 // });
 
-// io.on("connection",()=>{
+// io.on("connection",(socket)=>{
 //   console.log("useer connected");
 
 //   socket.on("disconnect",()=>{
