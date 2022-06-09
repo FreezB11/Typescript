@@ -8,6 +8,7 @@ import connect = require("./database/database")
 import userSchema,{User,model} from './database/schema'
 import { Server } from "socket.io";
 import socketIO from "socket.io-client";
+import cors from "cors";
 
 connect;
 
