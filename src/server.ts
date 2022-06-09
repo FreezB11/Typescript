@@ -7,8 +7,6 @@ import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 import userSchema,{User,model} from './database/schema'
 
-
-
 connect;
 
 const User = model<User>('User', userSchema);
