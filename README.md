@@ -10,8 +10,11 @@
     <h2>#TIMELINE</h2>
     .
     .
+    .
     <br>
     <h4># day1 project setup</h4>
+    .
+    .
     .
     .
     <br>
@@ -24,9 +27,13 @@
     .
     <br>
     <h4># day4 trid to setup login setup</h4>
-    .
-    .
     <br>
+    trying to setup socket
+
+
+
+
+
     <link>sockets reference : https://sbcode.net/tssock/server-connect-disconnect/</link>
 </body>
 </html>
