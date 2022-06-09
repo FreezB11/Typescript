@@ -2,7 +2,7 @@ import router from "../src/server";
 import httpServer from "../src/server"
 import logging from'../src/config/logging';
 import config from '../src/config/config';
-import { Server } from "socket.io";
+
 const NAMESPACE = 'Server';
 
 

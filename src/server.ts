@@ -6,6 +6,7 @@ import logging from './config/logging';
 import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 import userSchema,{User,model} from './database/schema'
+import { Server } from "socket.io";
 
 connect;
 
@@ -28,6 +29,8 @@ const NAMESPACE = 'Server';
 
 const router = express();
 const httpServer = http.createServer(router);
+
+const io = new Server(httpServer);
 
 /** Log the request */
 router.use((req, res, next) => {
