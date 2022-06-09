@@ -7,6 +7,8 @@ import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 import userSchema,{User,model} from './database/schema'
 
+import * as socketio from 'socket.io';
+
 connect;
 
 const User = model<User>('User', userSchema);
