@@ -3,6 +3,6 @@ build/**/*
 test
 chat
 server.ts
-Ts/src/database
+src/db
 
 package-lock.json

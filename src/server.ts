@@ -2,8 +2,8 @@ import bodyParser from 'body-parser';
 import express, { Express, Request, Response } from 'express';
 import path from "path";
 import HomeRoutes from './routes/homerouter';
-import connect = require("./database/database")
-import userSchema,{User,model} from './database/schema'
+import connect = require("./db/database")
+import userSchema,{User,model} from './db/schema'
 import { Server } from "socket.io";
 import socketIO from "socket.io-client";
 import cors from "cors";
@@ -38,26 +38,26 @@ const httpServer = http.createServer(router);
 const NAMESPACE = 'Server';
 
 
-router.use(cors);
+// router.use(cors);
 
-const io = new Server(httpServer,{
-  cors:{
-    origin:"*",
-    methods:["GET","POST"],
-  },
-});
+// const io = new Server(httpServer,{
+//   cors:{
+//     origin:"*",
+//     methods:["GET","POST"],
+//   },
+// });
 
-io.on("connection",()=>{
-  console.log("useer connected");
+// io.on("connection",()=>{
+//   console.log("useer connected");
 
-  socket.on("disconnect",()=>{
-    console.log("useer disconnected");
-  })
-})
+//   socket.on("disconnect",()=>{
+//     console.log("useer disconnected");
+//   })
+// })
 
-const ws = "http://localhost:6900/"
+// const ws = "http://localhost:6900/"
 
-const socket = socketIO(ws);
+// const socket = socketIO(ws);
 
 /** Log the request */
 router.use((req, res, next) => {
@@ -87,6 +87,27 @@ router.use((req, res, next) => {
     }
     next();
 });
+
+// router.use(cors);
+
+// const io = new Server(httpServer,{
+//   cors:{
+//     origin:"*",
+//     methods:["GET","POST"],
+//   },
+// });
+
+// io.on("connection",()=>{
+//   console.log("useer connected");
+
+//   socket.on("disconnect",()=>{
+//     console.log("useer disconnected");
+//   })
+// })
+
+// const ws = "http://localhost:6900/"
+
+// const socket = socketIO(ws);
 
 /** Routes go here */
 router.use('/', HomeRoutes);
