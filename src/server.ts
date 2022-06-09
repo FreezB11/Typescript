@@ -7,6 +7,7 @@ import HomeRoutes from './routes/homerouter';
 import connect = require("./database/database")
 import userSchema,{User,model} from './database/schema'
 import { Server } from "socket.io";
+import socketIO from "socket.io-client";
 
 connect;
 
