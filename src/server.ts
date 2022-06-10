@@ -88,9 +88,9 @@ io.on("connection",(socket)=>{
   })
 })
 
-// const ws = "http://localhost:6900/"
+const ws = "http://localhost:6900/"
 
-// const socket = socketIO(ws);
+const socket = socketIO(ws);
 
 /** Routes go here */
 router.use('/', HomeRoutes);
