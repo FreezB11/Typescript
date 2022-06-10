@@ -38,26 +38,7 @@ const httpServer = http.createServer(router);
 const NAMESPACE = 'Server';
 
 
-// router.use(cors);
 
-// const io = new Server(httpServer,{
-//   cors:{
-//     origin:"*",
-//     methods:["GET","POST"],
-//   },
-// });
-
-// io.on("connection",()=>{
-//   console.log("useer connected");
-
-//   socket.on("disconnect",()=>{
-//     console.log("useer disconnected");
-//   })
-// })
-
-// const ws = "http://localhost:6900/"
-
-// const socket = socketIO(ws);
 
 /** Log the request */
 router.use((req, res, next) => {
