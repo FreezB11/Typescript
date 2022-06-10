@@ -69,7 +69,7 @@ router.use((req, res, next) => {
     next();
 });
 
-// router.use(cors);
+router.use(cors());
 
 const io = new Server(httpServer,{
   cors:{
