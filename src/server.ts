@@ -71,20 +71,22 @@ router.use((req, res, next) => {
 
 // router.use(cors);
 
-// const io = new Server(httpServer,{
-//   cors:{
-//     origin:"*",
-//     methods:["GET","POST"],
-//   },
-// });
+const io = new Server(httpServer,{
+  cors:{
+    origin:"*",
+    methods:["GET","POST"],
+  },
+});
 
-// io.on("connection",(socket)=>{
-//   console.log("useer connected");
+io.on("connection",(socket)=>{
+  console.log("useer connected");
 
-//   socket.on("disconnect",()=>{
-//     console.log("useer disconnected");
-//   })
-// })
+  socket.on('message',(message)=>{
+    console.log(message);
+    io.emit('message',`${socket.id.substr(0,2)} said ${message}`)
+    
+  })
+})
 
 // const ws = "http://localhost:6900/"
 
