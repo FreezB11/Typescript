@@ -9,6 +9,8 @@ const router = express.Router();
 import {io} from 'socket.io-client';
 
 
+const socket = io("http://localhost:6900/")
+
 router.use(express.urlencoded({extended:false}))
 
 router.get('/ping', controller.serverHealthCheck);
