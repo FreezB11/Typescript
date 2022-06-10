@@ -79,6 +79,7 @@ const io = new Server(httpServer,{
 });
 
 io.on("connection",(socket)=>{
+  console.log(socket.id);
   console.log("useer connected");
 
   socket.on('message',(message)=>{
