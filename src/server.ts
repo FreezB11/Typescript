@@ -85,7 +85,12 @@ io.on("connection",(socket)=>{
     console.log(message);
     io.emit('message',`${socket.id.substr(0,2)} said ${message}`)
     
-  })
+  });
+
+  socket.on("disconnect", () => {
+    console.log("Client disconnected");
+  });
+
 })
 
 const ws = "http://localhost:6900/"
