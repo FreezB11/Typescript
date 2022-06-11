@@ -14,8 +14,6 @@
     <h4># day2 setting up routes and controllers</h4>
     <br>
     <h4># day3 successfully connected to mongodb</h4>
-    .
-    .
     <br>
     <h4># day4 trid to setup login setup</h4>
     <br>
