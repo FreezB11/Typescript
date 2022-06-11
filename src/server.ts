@@ -10,10 +10,7 @@ import cors from "cors";
 import * as http from 'http';
 import logging from'../src/config/logging';
 import config from '../src/config/config';
-import compression from 'compression'
-import { MONGODB_URI } from './util/secrets'
-import { ProductRoutes } from './routes/productRoutes'
-import { UserRoutes } from './routes/userRoutes'
+
 
 connect;
 
