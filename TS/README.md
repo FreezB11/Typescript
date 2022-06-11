@@ -18,11 +18,6 @@
     <h4># day4 trid to setup login setup</h4>
     <br>
     trying to setup socket
-
-
-
-
-
     <link>sockets reference : https://sbcode.net/tssock/server-connect-disconnect/</link>
 </body>
 </html>
