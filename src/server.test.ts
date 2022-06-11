@@ -24,6 +24,20 @@ class Server {
   }
 
   public config(): void {
+
+    const NAMESPACE = 'Server';
+
+    this.app.use((req, res, next) => {
+        /** Log the req */
+        logging.info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
+        res.on('finish', () => {
+            /** Log the res */
+            logging.info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`);
+        })
+        next();
+    });
+
+
     this.app.set('port', process.env.PORT || 3000)
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: false }))
@@ -34,9 +48,20 @@ class Server {
   }
 
   public start(): void {
+
     const httpServer = http.createServer(this.app);
 
     const NAMESPACE = 'Server';
+
+    // this.app.use((req, res, next) => {
+    //     /** Log the req */
+    //     logging.info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
+    //     res.on('finish', () => {
+    //         /** Log the res */
+    //         logging.info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`);
+    //     })
+    //     next();
+    // });
 
     httpServer.listen(config.server.port, () => logging.info(NAMESPACE, `Server is running ${config.server.hostname}:${config.server.port}`));
   }
