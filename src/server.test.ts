@@ -1,14 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
 
-import compression from 'compression'
-import cors from 'cors'
-
-import { MONGODB_URI } from './util/secrets'
-
-import { ProductRoutes } from './routes/productRoutes'
-import { UserRoutes } from './routes/userRoutes'
-
 class Server {
   public app: express.Application
 
