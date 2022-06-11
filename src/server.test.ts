@@ -5,6 +5,8 @@ import http from 'http';
 import HomeRoutes from './routes/homerouter';
 import logging from'../src/config/logging';
 import config from '../src/config/config';
+import bodyParser from 'body-parser';
+import path from "path";
 
 
 class Server {
@@ -26,6 +28,9 @@ class Server {
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: false }))
     this.app.use(cors())
+    this.app.use(express.static(path.join(__dirname, "public")));
+    this.app.use(bodyParser.urlencoded({ extended: true }));
+    this.app.use(bodyParser.json());
   }
 
   public start(): void {
