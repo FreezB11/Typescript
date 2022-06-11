@@ -14,6 +14,7 @@ class Server {
     this.app = express()
     this.config()
     this.routes()
+    
   }
 
   public routes(): void {
@@ -28,11 +29,11 @@ class Server {
   }
 
   public start(): void {
-    this.httpServer = http.createServer(app);
+    const httpServer = http.createServer(this.app);
 
     const NAMESPACE = 'Server';
 
-    this.httpServer.listen(config.server.port, () => logging.info(NAMESPACE, `Server is running ${config.server.hostname}:${config.server.port}`));
+    httpServer.listen(config.server.port, () => logging.info(NAMESPACE, `Server is running ${config.server.hostname}:${config.server.port}`));
   }
 }
 
