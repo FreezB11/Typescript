@@ -1,13 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
-
-import compression from 'compression'
-import cors from 'cors'
-
-import { MONGODB_URI } from './util/secrets'
-
-import { ProductRoutes } from './routes/productRoutes'
-import { UserRoutes } from './routes/userRoutes'
+import cors from 'cors';
+import HomeRoutes from './routes/homerouter';
 
 class Server {
   public app: express.Application
@@ -20,15 +14,13 @@ class Server {
   }
 
   public routes(): void {
-    this.app.use('/api/user', new UserRoutes().router)
-    this.app.use('/api/products', new ProductRoutes().router)
+    this.app.use('/', HomeRoutes)
   }
 
   public config(): void {
     this.app.set('port', process.env.PORT || 3000)
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: false }))
-    this.app.use(compression())
     this.app.use(cors())
   }
 
