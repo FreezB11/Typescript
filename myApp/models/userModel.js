@@ -1,7 +1,9 @@
-const mongoose = require("../database");
+// const mongoose = require("../database");
+var mongoose = require('mongoose');
  
+const Schema = mongoose;
 // create an schema
-var userSchema = new mongoose.Schema({
+var userSchema = mongoose.Schema({
             name: String,
             password: String,
             email:String
