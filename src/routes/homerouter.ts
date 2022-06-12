@@ -13,15 +13,10 @@ router.use(express.urlencoded({extended:false}))
 router.get('/ping', controller.serverHealthCheck);
 
 router.get('/', view.index);
+
 router.get('/register', view.register);
 
-router.post('/register', (req,res)=>{
-    res.send("sent")
-});
-
-router.get('/help', view.help);
-
-router.post('/help',controller.StoreDataToDB);
+router.post('/register',controller.StoreDataToDB);
 
 // router.get('/:id',(req,res) =>{
 //     res.send(`${req.params.id}`)
