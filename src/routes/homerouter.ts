@@ -1,9 +1,6 @@
 import express from 'express';
 import controller from '../controllers/controller';
-import index from '../views/index';
-import register from '../views/register'
-import help from '../views/help';
-import err from '../views/404'
+import view from '../views/view'
 const bcrypt = require('bcrypt');
 const router = express.Router();
 import {io} from 'socket.io-client';
@@ -15,14 +12,14 @@ router.use(express.urlencoded({extended:false}))
 
 router.get('/ping', controller.serverHealthCheck);
 
-router.get('/', index.index);
-router.get('/register', register.register);
+router.get('/', view.index);
+router.get('/register', view.register);
 
 router.post('/register', (req,res)=>{
     res.send("sent")
 });
 
-router.get('/help', help.help);
+router.get('/help', view.help);
 
 router.post('/help',controller.StoreDataToDB);
 
@@ -31,6 +28,6 @@ router.post('/help',controller.StoreDataToDB);
 // });
 
 //eroorhandler
-router.use(err.notfound);
+router.use(view.notfound);
 
 export = router;
