@@ -12,7 +12,7 @@ const register = (req: Request, res: Response, next: NextFunction) => {
         <title>Document</title>
     </head>
     <body>
-        <form action="/help" method="post">
+        <form action="/register" method="post">
             <label for="name">
                 First name:
             </label>
