@@ -1,8 +1,5 @@
 node_modules
 build/**/*
-test
-chat
 
 src/db
-node-express-mongo-passport-jwt-typescript
 package-lock.json
