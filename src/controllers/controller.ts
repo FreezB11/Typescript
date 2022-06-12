@@ -34,7 +34,7 @@ const StoreDataToDB = (req: Request, res: Response, next: NextFunction) => {
         email: email,
         password:hashed,
       });
-    //   await user.save();
+    await user.save();
       console.log(user);
     }
 
