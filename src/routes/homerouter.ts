@@ -1,6 +1,7 @@
 import express from 'express';
 import controller from '../controllers/controller';
 import index from '../views/index';
+import register from '../views/register'
 import help from '../views/help';
 import err from '../views/404'
 const bcrypt = require('bcrypt');
@@ -15,8 +16,11 @@ router.use(express.urlencoded({extended:false}))
 router.get('/ping', controller.serverHealthCheck);
 
 router.get('/', index.index);
-router.get('/login');
-router.get('/register')
+router.get('/register', register.register);
+
+router.post('/register', (req,res)=>{
+    res.send("sent")
+});
 
 router.get('/help', help.help);
 

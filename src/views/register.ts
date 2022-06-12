@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 
 
-const help = (req: Request, res: Response, next: NextFunction) => {
+const register = (req: Request, res: Response, next: NextFunction) => {
     return res.send(`
     <!DOCTYPE html>
 <html lang="en">
@@ -12,14 +12,21 @@ const help = (req: Request, res: Response, next: NextFunction) => {
     <title>Document</title>
 </head>
 <body>
-    <form action="/home" method="post">
+    <form action="/register" method="POST">
+        Enter email id 
+        <br>
         <input type="email" name="email" id="email">
+        <br>
+        Enter password
+        <br>
         <input type="password" name="password" id="password">
-        <input type="button" value="button">
+        <br>
+        <br>
+        <button>Submit</button>
     </form>
 </body>
 </html>
     `)
 };
 
-export default {help} 
+export default {register} 
