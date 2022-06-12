@@ -30,16 +30,16 @@ const StoreDataToDB = (req: Request, res: Response, next: NextFunction) => {
     async function run() {
       // 4. Connect to MongoDB
       const user = new User({
-        name: 'Bill',
-        email: 'bill@initech.com',
-        avatar: 'https://i.imgur.com/dM7Thhn.png',
+        name: name,
+        email: email,
+        password:hashed,
       });
     //   await user.save();
       console.log(user);
     }
 
 
-    console.log(name,email,hashed);
+    //console.log(name,email,hashed);
     return res.send("posted");
 };
 

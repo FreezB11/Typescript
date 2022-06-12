@@ -14,20 +14,20 @@ import config from './config/config';
 
 connect;
 
-const User = model<User>('User', userSchema);
+// const User = model<User>('User', userSchema);
 
-run().catch(err => console.log(err));
+// run().catch(err => console.log(err));
 
-async function run() {
-  // 4. Connect to MongoDB
-  const user = new User({
-    name: 'Bill',
-    email: 'bill@initech.com',
-    avatar: 'https://i.imgur.com/dM7Thhn.png',
-  });
-//   await user.save();
-  console.log(user);
-}
+// async function run() {
+//   // 4. Connect to MongoDB
+//   const user = new User({
+//     name: 'Bill',
+//     email: 'bill@initech.com',
+//     avatar: 'https://i.imgur.com/dM7Thhn.png',
+//   });
+// //   await user.save();
+//   console.log(user);
+// }
 
 
 
