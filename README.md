@@ -8,6 +8,8 @@
 <body>
     <h2># learning typescript</h2>
     <h2>#TIMELINE</h2>
+    
+    
     <br>
     <h4># day1 project setup</h4>
     <br>
