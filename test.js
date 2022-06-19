@@ -3,8 +3,7 @@ var express = require("express"),
 	passport = require("passport"),
 	bodyParser = require("body-parser"),
 	LocalStrategy = require("passport-local"),
-	passportLocalMongoose =
-		require("passport-local-mongoose"),
+	passportLocalMongoose = require("passport-local-mongoose"),
 	User = require("./models/user");
     
 mongoose.connect('mongodb+srv://yashraj:yashraj0403@cluster0.6vlbp.mongodb.net/?retryWrites=true&w=majority');
