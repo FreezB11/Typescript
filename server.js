@@ -65,7 +65,7 @@ if (process.env.NODE_ENV !== 'production') {
   })
   
   app.delete('/logout', (req, res) => {
-    req.logOut()
+    // req.logOut()
     res.redirect('/login')
   })
   
