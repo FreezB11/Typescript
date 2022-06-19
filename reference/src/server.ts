@@ -1,7 +1,7 @@
 import bodyParser from 'body-parser';
 import express, { Express, Request, Response } from 'express';
 import path from "path";
-import HomeRoutes from './routes/homerouter';
+import HomeRoutes, { route } from './routes/homerouter';
 import connect = require("./db/database")
 import userSchema,{User,model} from './db/schema'
 import * as http from 'http';
@@ -29,6 +29,10 @@ connect;
 //   console.log(user);
 // }
 
+
+
+
+
 const router = express();
 
 const httpServer = http.createServer(router);
@@ -51,6 +55,22 @@ router.use((req, res, next) => {
 router.use(express.static(path.join(__dirname, "public")));
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
+
+
+
+router.use(require("express-session")({
+	secret: "Rusty is a dog",
+	resave: false,
+	saveUninitialized: false
+}));
+
+router.use(passport.initialize());
+router.use(passport.session());
+
+passport.use(new LocalStrategy(userSchema.authenticate()));
+passport.serializeUser(userSchema.serializeUser());
+passport.deserializeUser(userSchema.deserializeUser());
+
 
 /** Rules of our API */
 router.use((req, res, next) => {
