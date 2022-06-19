@@ -1,4 +1,5 @@
 import { Schema, model} from 'mongoose';
+import passportmongoose from 'passport-local-mongoose'
 
 interface User {
     name: string;
@@ -11,6 +12,8 @@ const userSchema = new Schema<User>({
     email: { type: String, required: true },
     password:{type: String, required: true}
 });
+
+userSchema.plugin(passportmongoose)
 
 export default userSchema;
 export{User, model}
