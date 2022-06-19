@@ -6,11 +6,7 @@ var express = require("express"),
 	passportLocalMongoose =
 		require("passport-local-mongoose"),
 	User = require("./models/user");
-
-// mongoose.set('useNewUrlParser', true);
-// mongoose.set('useFindAndModify', false);
-// mongoose.set('useCreateIndex', true);
-// mongoose.set('useUnifiedTopology', true);
+    
 mongoose.connect('mongodb+srv://yashraj:yashraj0403@cluster0.6vlbp.mongodb.net/?retryWrites=true&w=majority');
 
 var app = express();
