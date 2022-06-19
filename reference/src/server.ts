@@ -37,9 +37,6 @@ const httpServer = http.createServer(router);
 
 const NAMESPACE = 'Server';
 
-
-
-
 /** Log the request */
 router.use((req, res, next) => {
     /** Log the req */
@@ -69,34 +66,7 @@ router.use((req, res, next) => {
     next();
 });
 
-router.use(cors());
 
-const io = new Server(httpServer,{
-  cors:{
-    origin:"*",
-    methods:["GET","POST"],
-  },
-});
-
-io.on("connection",(socket)=>{
-  console.log(socket.id);
-  console.log("useer connected");
-
-  socket.on('message',(message)=>{
-    console.log(message);
-    io.emit('message',`${socket.id.substr(0,2)} said ${message}`)
-    
-  });
-
-  socket.on("disconnect", () => {
-    console.log("Client disconnected");
-  });
-
-})
-
-const ws = "http://localhost:6900/"
-
-const socket = socketIO(ws);
 
 /** Routes go here */
 router.use('/', HomeRoutes);
