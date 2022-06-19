@@ -6,25 +6,24 @@ var express = require("express"),
 	passportLocalMongoose = require("passport-local-mongoose"),
 	User = require("./models/user");
 
-var logging = require("./config/logging")
-var config = require("./config/config")
+
 var http = require("http")
     
 mongoose.connect('mongodb+srv://yashraj:yashraj0403@cluster0.6vlbp.mongodb.net/?retryWrites=true&w=majority');
 
 var app = express();
 
-const httpServer = http.createServer(router);
+const httpServer = http.createServer(app);
 
 const NAMESPACE = 'Server';
 
 /** Log the request */
 app.use((req, res, next) => {
     /** Log the req */
-    logging.info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
+    info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
     res.on('finish', () => {
         /** Log the res */
-        logging.info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`);
+        info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`);
     })
     next();
 });
@@ -108,7 +107,44 @@ function isLoggedIn(req, res, next) {
 }
 
 var port = process.env.PORT || 3000;
-httpServer.listen(config.server.port, () => logging.info(NAMESPACE, `Server is running ${config.server.hostname}:${config.server.port}`));
+
+var info = (namespace, message, object) => {
+    if (object) {
+        console.info(`[${getTimeStamp()}] [INFO] [${namespace}] ${message}`, object);
+    } else {
+        console.info(`[${getTimeStamp()}] [INFO] [${namespace}] ${message}`);
+    }
+};
+
+var warn = (namespace, message, object) => {
+    if (object) {
+        console.warn(`[${getTimeStamp()}] [WARN] [${namespace}] ${message}`, object);
+    } else {
+        console.warn(`[${getTimeStamp()}] [WARN] [${namespace}] ${message}`);
+    }
+};
+
+var error = (namespace, message, object) => {
+    if (object) {
+        console.error(`[${getTimeStamp()}] [ERROR] [${namespace}] ${message}`, object);
+    } else {
+        console.error(`[${getTimeStamp()}] [ERROR] [${namespace}] ${message}`);
+    }
+};
+
+var debug = (namespace, message, object) => {
+    if (object) {
+        console.debug(`[${getTimeStamp()}] [DEBUG] [${namespace}] ${message}`, object);
+    } else {
+        console.debug(`[${getTimeStamp()}] [DEBUG] [${namespace}] ${message}`);
+    }
+};
+
+var getTimeStamp = () => {
+    return new Date().toISOString();
+};
+
+httpServer.listen(port, () => info(NAMESPACE, `Server is running localhost:6900`));
 
 // app.listen(port, function () {
 // 	console.log("Server Has Started!");
