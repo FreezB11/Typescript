@@ -1,4 +1,4 @@
-const info = (namespace: string, message: string, object?: any) => {
+const info = (namespace, message, object) => {
     if (object) {
         console.info(`[${getTimeStamp()}] [INFO] [${namespace}] ${message}`, object);
     } else {
@@ -6,7 +6,7 @@ const info = (namespace: string, message: string, object?: any) => {
     }
 };
 
-const warn = (namespace: string, message: string, object?: any) => {
+const warn = (namespace, message, object) => {
     if (object) {
         console.warn(`[${getTimeStamp()}] [WARN] [${namespace}] ${message}`, object);
     } else {
@@ -14,7 +14,7 @@ const warn = (namespace: string, message: string, object?: any) => {
     }
 };
 
-const error = (namespace: string, message: string, object?: any) => {
+const error = (namespace, message, object) => {
     if (object) {
         console.error(`[${getTimeStamp()}] [ERROR] [${namespace}] ${message}`, object);
     } else {
@@ -22,7 +22,7 @@ const error = (namespace: string, message: string, object?: any) => {
     }
 };
 
-const debug = (namespace: string, message: string, object?: any) => {
+const debug = (namespace, message, object) => {
     if (object) {
         console.debug(`[${getTimeStamp()}] [DEBUG] [${namespace}] ${message}`, object);
     } else {
@@ -30,7 +30,7 @@ const debug = (namespace: string, message: string, object?: any) => {
     }
 };
 
-const getTimeStamp = (): string => {
+const getTimeStamp = () => {
     return new Date().toISOString();
 };
 

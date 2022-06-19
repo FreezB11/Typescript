@@ -5,10 +5,30 @@ var express = require("express"),
 	LocalStrategy = require("passport-local"),
 	passportLocalMongoose = require("passport-local-mongoose"),
 	User = require("./models/user");
+
+var logging = require("./config/logging")
+var config = require("./config/config")
+var http = require("http")
     
 mongoose.connect('mongodb+srv://yashraj:yashraj0403@cluster0.6vlbp.mongodb.net/?retryWrites=true&w=majority');
 
 var app = express();
+
+const httpServer = http.createServer(router);
+
+const NAMESPACE = 'Server';
+
+/** Log the request */
+app.use((req, res, next) => {
+    /** Log the req */
+    logging.info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
+    res.on('finish', () => {
+        /** Log the res */
+        logging.info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`);
+    })
+    next();
+});
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -88,6 +108,8 @@ function isLoggedIn(req, res, next) {
 }
 
 var port = process.env.PORT || 3000;
-app.listen(port, function () {
-	console.log("Server Has Started!");
-});
+httpServer.listen(config.server.port, () => logging.info(NAMESPACE, `Server is running ${config.server.hostname}:${config.server.port}`));
+
+// app.listen(port, function () {
+// 	console.log("Server Has Started!");
+// });
