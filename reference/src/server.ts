@@ -7,6 +7,9 @@ import userSchema,{User,model} from './db/schema'
 import * as http from 'http';
 import logging from'./config/logging';
 import config from './config/config';
+import passport from 'passport';
+import passportLocal from 'passport-local';
+import passportmongoose from 'passport-local-mongoose'
 
 
 connect;
