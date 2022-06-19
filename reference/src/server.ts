@@ -4,9 +4,6 @@ import path from "path";
 import HomeRoutes from './routes/homerouter';
 import connect = require("./db/database")
 import userSchema,{User,model} from './db/schema'
-import { Server } from "socket.io";
-import socketIO from "socket.io-client";
-import cors from "cors";
 import * as http from 'http';
 import logging from'./config/logging';
 import config from './config/config';
@@ -28,8 +25,6 @@ connect;
 // //   await user.save();
 //   console.log(user);
 // }
-
-
 
 const router = express();
 
