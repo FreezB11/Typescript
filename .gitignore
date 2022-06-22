@@ -1,5 +1,5 @@
 node_modules
 build/**/*
-
+TS/
 src/db
 package-lock.json
