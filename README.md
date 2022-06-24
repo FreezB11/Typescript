@@ -4,7 +4,7 @@ ArielX is a ....
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [npm](https://pip.pypa.io/en/stable/) to install foobar.
 
 ```bash
 npm install
