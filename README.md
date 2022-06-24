@@ -4,7 +4,7 @@ ArielX is a ....
 
 ## Installation
 
-Use the package manager [npm](https://pip.pypa.io/en/stable/) to install ArielX
+Use the package manager [npm](https://www.npmjs.com/) to install ArielX
 .
 
 ```bash
