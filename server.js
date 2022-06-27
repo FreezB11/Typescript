@@ -1,7 +1,7 @@
 var express = require("express"),
 	mongoose = require("mongoose"),
 	passport = require("passport"),
-	bodyParser = require("body-parser"),
+var bodyParser = require("body-parser"),
 var LocalStrategy = require("passport-local"),
 var passportLocalMongoose = require("passport-local-mongoose"),
 var User = require("./models/user");
