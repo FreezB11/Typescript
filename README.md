@@ -1,13 +1,14 @@
-# Foobar
+# ArielX
 
-Foobar is a Python library for dealing with word pluralization.
+ArielX is a ....
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [npm](https://www.npmjs.com/) to install ArielX
+.
 
 ```bash
-pip install foobar
+npm install
 ```
 
 ## Usage
@@ -31,4 +32,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/FreezB11/Typescript/blob/master/LICENSE)
