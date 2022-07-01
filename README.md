@@ -5,6 +5,8 @@ ArielX is a ....
 ## Installation
 
 Use the package manager [npm](https://www.npmjs.com/) to install ArielX
+Created with [readme](https://readme.so/editor) 
+
 .
 
 ```bash
