@@ -46,5 +46,12 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
+## Support
+
+For support, email fake@fake.com or join our Slack channel.
+
+
+
+
 ## License
 [MIT](https://github.com/FreezB11/Typescript/blob/master/LICENSE)
