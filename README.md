@@ -50,6 +50,9 @@ Please make sure to update tests as appropriate.
 
 For support, email fake@fake.com or join our Slack channel.
 
+## Authors
+
+- [@FreezB11](https://www.github.com/FreezB11)
 
 
 
