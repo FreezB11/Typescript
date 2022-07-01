@@ -68,7 +68,13 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 | Example Color | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) #00d1a0 |
 
 
+## Environment Variables
 
+To run this project, you will need to add the following environment variables to your .env file
+
+`API_KEY`
+
+`ANOTHER_API_KEY`
 
 ## Authors
 
