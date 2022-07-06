@@ -24,6 +24,7 @@
     "@types/express-session": "^1.17.4",
     "@types/method-override": "^0.0.32",
     "@types/mongoose": "^5.11.97",
+    "@types/node": "^18.0.3",
     "@types/passport": "^1.0.9",
     "@types/passport-local": "^1.0.34",
     "@types/passport-local-mongoose": "^6.1.1",
