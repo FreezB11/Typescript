@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 import User from '../models/User';
 import * as passportLocalMongoose from 'passport-local-mongoose';
 import http from 'http';
-
+import path from 'path';
 
 mongoose.connect('mongodb+srv://yashraj:yashraj0403@cluster0.6vlbp.mongodb.net/?retryWrites=true&w=majority');
 
@@ -28,6 +28,8 @@ const NAMESPACE = 'Server';
 //     next();
 // });
 
+app.set("views", path.join(__dirname, "./views"));
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -48,8 +50,8 @@ passport.deserializeUser(User.deserializeUser());
 
 
 
-app.get("/", function (req, res) {
-	res.render("home");
+app.get("/", function (req, res: Response) {
+	res.render("home.ejs");
 });
 
 // Showing secret page
