@@ -1,5 +1,5 @@
 import express, { Express, Request, Response} from 'express';
-import * as mongoose from 'mongoose';
+import mongoose from "mongoose";
 const passport = require('passport');
 const LocalStrategy = require("passport-local")
 import bodyParser from 'body-parser';
