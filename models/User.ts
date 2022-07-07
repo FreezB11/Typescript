@@ -1,81 +1,44 @@
-import mongoose, {
-  PassportLocalDocument,
-  PassportLocalSchema,
-  PassportLocalModel,
-} from 'mongoose';
-import passportLocalMongoose from 'passport-local-mongoose';
+import { Document, model, Schema, PassportLocalModel, PassportLocalDocument, PassportLocalSchema} from "mongoose";
 
-export enum UserStatus {
-  Created = 'created',
-  Approved = 'approved',
-  Banned = 'banned',
+import { IUserType } from "./UserType";
+
+import passportLocalMongoose from "passport-local-mongoose";
+
+export interface IUser extends PassportLocalDocument {
+      userAccess: IUserType["_id"];
+      email: string;
+      username: string;
+      avatar: string;
+      
 }
 
-export enum UserRole {
-  Member = 'member',
-  Admin = 'admin',
-  Public = 'public',
-}
-
-// An interface for props to create a new user
-interface UserAttrs {
-  email: string;
-  password: string;
-  status?: UserStatus;
-  role?: UserRole;
-}
-
-// An interface that describes the properties of User document
-interface UserDoc extends PassportLocalDocument {
-  email: string;
-  password: string;
-  status: UserStatus;
-  role: UserRole;
-}
-
-// An interface that describes User model
-export interface UserModel extends PassportLocalModel<UserDoc> {
-  build(attrs: UserAttrs): UserDoc;
-}
-
-const userSchema = new mongoose.Schema(
-  {
-    email: {
-      type: String,
-      required: true,
-    },
-    password: {
-      type: String,
-      required: true,
-    },
-    status: {
-      type: String,
-      required: true,
-    },
-    role: {
-      type: String,
-      required: true,
-    },
-  },
-  {
-    toJSON: {
-      transform(doc, ret) {
-        delete ret.password;
-        ret.id = ret._id;
-        delete ret._id;
+const UserSchema = new Schema({
+      email: {
+            type: String,
+            required: true,
+            unique: true,
+            
       },
-    },
-  },
-) as PassportLocalSchema;
+      username: {
+            type: String,
+            required: true,
+            unique: true,
+      },
+      userAccess: [
+            {
+                  type: Schema.Types.ObjectId,
+                  ref: "UserType",
+                  required: true,
+            },
+            ],
+      avatar: {
+            type: String,
+      },
+}) as PassportLocalSchema ;
 
-userSchema.set('versionKey', 'version');
-userSchema.plugin(passportLocalMongoose, {
-  usernameField: 'email',
-});
-userSchema.statics.build = (attrs: UserAttrs) => {
-  return new User(attrs);
-};
+interface UserModel <T extends Document> extends PassportLocalModel<T> {}
 
-const User = mongoose.model<UserDoc, UserModel>('User', userSchema);
+UserSchema.plugin(passportLocalMongoose);
 
-export { User };
+const User = model<IUser>("User", UserSchema);
+export default User;
