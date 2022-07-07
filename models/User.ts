@@ -4,41 +4,24 @@ import { IUserType } from "./UserType";
 
 import passportLocalMongoose from "passport-local-mongoose";
 
-export interface IUser extends PassportLocalDocument {
-      userAccess: IUserType["_id"];
-      email: string;
+export interface UserData {
+      is_temporary: boolean;
+      is_verified: boolean;
+      status: boolean;
       username: string;
-      avatar: string;
-      
-}
+  }
 
 const UserSchema = new Schema({
-      email: {
-            type: String,
-            required: true,
-            unique: true,
-            
-      },
-      username: {
-            type: String,
-            required: true,
-            unique: true,
-      },
-      userAccess: [
-            {
-                  type: Schema.Types.ObjectId,
-                  ref: "UserType",
-                  required: true,
-            },
-            ],
-      avatar: {
-            type: String,
-      },
-}) as PassportLocalSchema ;
+      username: { type: String, required: true },
+      password: String,
+      status: { type: Boolean, required: true },
+      is_verified: { type: Boolean, required: true },
+      is_temporary: { type: Boolean, required: true }
+    });
 
 interface UserModel <T extends Document> extends PassportLocalModel<T> {}
 
 UserSchema.plugin(passportLocalMongoose);
 
-const User = model<IUser>("User", UserSchema);
+const User = model("User", UserSchema);
 export default User;
