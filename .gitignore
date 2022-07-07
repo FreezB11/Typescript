@@ -1,5 +1,6 @@
 node_modules
 build/**/*
 TS/
+typescript-express-passportjs
 src/db
 package-lock.json
