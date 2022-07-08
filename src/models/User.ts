@@ -9,12 +9,12 @@ export interface UserData {
       is_verified: boolean;
       status: boolean;
       username: string;
-      // email: string;
+      email: string;
   }
 
 const UserSchema = new Schema({
       username: { type: String, required: true },
-      // email:{type: String, required: true },
+      email:{type: String, required: true },
       password: String,
       status: { type: Boolean, required: true },
       is_verified: { type: Boolean, required: false },
