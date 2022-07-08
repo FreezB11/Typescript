@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const passport = require('passport');
 const LocalStrategy = require("passport-local")
 import bodyParser from 'body-parser';
-import User from '../models/User';
+import User from './models/User';
 import * as passportLocalMongoose from 'passport-local-mongoose';
 import http from 'http';
 import path from 'path';
