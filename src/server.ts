@@ -19,15 +19,15 @@ const httpServer = http.createServer(app);
 const NAMESPACE = 'Server';
 
 
-// app.use((req, res, next) => {
-//     /** Log the req */
-//     info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
-//     res.on('finish', () => {
-//         /** Log the res */
-//         info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`);
-//     })
-//     next();
-// });
+app.use((req, res, next) => {
+    /** Log the req */
+    info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
+    res.on('finish', () => {
+        /** Log the res */
+        info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`);
+    })
+    next();
+});
 
 app.set("views", path.join(__dirname, "./views"));
 
