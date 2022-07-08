@@ -118,6 +118,8 @@ var getTimeStamp = () => {
     return new Date().toISOString();
 };
 
-httpServer.listen(port, () => {
-    console.log(`started on ${port}`)
-});
+// httpServer.listen(port, () => {
+//     console.log(`started on ${port}`)
+// });
+
+httpServer.listen(port, () => logging.info(NAMESPACE, `Server is running on ${port}`));
