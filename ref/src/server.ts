@@ -1,13 +1,12 @@
 import express, { Express, Request, Response} from 'express';
-import mongoose from "mongoose";
+import * as mongoose from 'mongoose';
 const passport = require('passport');
 const LocalStrategy = require("passport-local")
 import bodyParser from 'body-parser';
-import User from './models/User';
+import User from '../models/User';
 import * as passportLocalMongoose from 'passport-local-mongoose';
 import http from 'http';
-import path from 'path';
-import logging from './config/logging';
+
 
 mongoose.connect('mongodb+srv://yashraj:yashraj0403@cluster0.6vlbp.mongodb.net/?retryWrites=true&w=majority');
 
@@ -19,17 +18,15 @@ const httpServer = http.createServer(app);
 const NAMESPACE = 'Server';
 
 
-app.use((req, res, next) => {
-    /** Log the req */
-    logging.info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
-    res.on('finish', () => {
-        /** Log the res */
-        logging.info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`);
-    })
-    next();
-});
-
-app.set("views", path.join(__dirname, "./views"));
+// app.use((req, res, next) => {
+//     /** Log the req */
+//     info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
+//     res.on('finish', () => {
+//         /** Log the res */
+//         info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`);
+//     })
+//     next();
+// });
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -51,8 +48,8 @@ passport.deserializeUser(User.deserializeUser());
 
 
 
-app.get("/", function (req, res: Response) {
-	res.render("home.ejs");
+app.get("/", function (req, res) {
+	res.render("home");
 });
 
 // Showing secret page
@@ -118,8 +115,6 @@ var getTimeStamp = () => {
     return new Date().toISOString();
 };
 
-// httpServer.listen(port, () => {
-//     console.log(`started on ${port}`)
-// });
-
-httpServer.listen(port, () => logging.info(NAMESPACE, `Server is running on ${port}`));
+httpServer.listen(port, () => {
+    console.log(`started on ${port}`)
+});
