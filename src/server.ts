@@ -7,6 +7,7 @@ import User from '../models/User';
 import * as passportLocalMongoose from 'passport-local-mongoose';
 import http from 'http';
 import path from 'path';
+import logging from './config/logging';
 
 mongoose.connect('mongodb+srv://yashraj:yashraj0403@cluster0.6vlbp.mongodb.net/?retryWrites=true&w=majority');
 
