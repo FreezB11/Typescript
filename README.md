@@ -20,7 +20,7 @@ npm install
 
 ## Usage
 
-```python
+```C
 import foobar
 
 # returns 'words'
