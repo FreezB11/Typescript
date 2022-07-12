@@ -21,7 +21,7 @@ npm install
 ## Usage
 
 ```C
-import foobar
+#include "ArielX"
 
 # returns 'words'
 foobar.pluralize('word')
