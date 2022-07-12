@@ -1,4 +1,4 @@
-![Logo](https://cutewallpaper.org/24/logo-circle-png/lady-gaga-versace-greek-circle-png-by-henricksouza-on-deviantart.png)
+![Logo](https://w7.pngwing.com/pngs/603/120/png-transparent-computer-icons-binary-code-binary-number-binary-file-symbol-miscellaneous-text-logo.png)
 
 
 
