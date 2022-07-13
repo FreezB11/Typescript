@@ -1,7 +1,4 @@
 node_modules
 build/**/*
-TS/
 .env
-typescript-express-passportjs
-src/db
 package-lock.json
