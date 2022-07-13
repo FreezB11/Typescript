@@ -1,4 +1,5 @@
 node_modules
 build/**/*
 .env
+src/repo/database.json
 package-lock.json
