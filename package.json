@@ -1,0 +1,19 @@
+{
+  "name": "arielx",
+  "version": "4.0.0",
+  "description": "learning",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FreezB11/Typescript.git"
+  },
+  "author": "@FreezB11",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FreezB11/Typescript/issues"
+  },
+  "homepage": "https://github.com/FreezB11/Typescript#readme"
+}
