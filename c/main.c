@@ -1,3 +1,4 @@
 #include <stdlib.h>
 
-   int system(const char *command);
+int system(const char *command);
+system("pwd")
