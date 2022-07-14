@@ -3,7 +3,7 @@
 int main(){
 
     int system(const char *command);
-    system("pwd");
+    system("touch test.txt");
 
     return 0;
 }
