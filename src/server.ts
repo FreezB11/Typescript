@@ -16,11 +16,7 @@ import { CustomError } from '@shared/errors';
 const app = express();
 
 
-/***********************************************************************************
- *                                  Middlewares
- **********************************************************************************/
 
-// Common middlewares
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
