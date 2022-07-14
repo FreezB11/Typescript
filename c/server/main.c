@@ -17,7 +17,6 @@
 
 #endif
 
-
 #if defined(_WIN32)
 #define ISVALIDSOCKET(s) ((s) != INVALID_SOCKET)
 #define CLOSESOCKET(s) closesocket(s)
