@@ -1,4 +1,5 @@
 #include <stdlib.h>
 
 int system(const char *command);
-system("pwd")
+
+system("pwd");
