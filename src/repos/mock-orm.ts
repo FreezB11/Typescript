@@ -2,8 +2,6 @@ import jsonfile from 'jsonfile';
 
 const dbFilePath = 'src/repos/database.json';
 
-
-
 function openDb(): Promise<Record<string, any>> {
     return jsonfile.readFile(dbFilePath);
 }
