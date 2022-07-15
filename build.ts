@@ -6,7 +6,6 @@ import childProcess from 'child_process';
 
 (async () => {
     try {
-        // Remove current build
         await remove('./dist/');
         // Copy front-end files
         await copy('./src/public', './dist/public');
