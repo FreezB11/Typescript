@@ -9,7 +9,6 @@ import apiRouter from './routes/api';
 import logger from 'jet-logger';
 import { CustomError } from '@shared/errors';
 
-
 // Constants
 const app = express();
 
