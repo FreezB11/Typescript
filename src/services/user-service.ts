@@ -6,13 +6,6 @@ function getAll(): Promise<IUser[]> {
     return userRepo.getAll();
 }
 
-
-/**
- * Add one user.
- * 
- * @param user 
- * @returns 
- */
 function addOne(user: IUser): Promise<void> {
     return userRepo.add(user);
 }
