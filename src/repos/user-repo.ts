@@ -34,13 +34,6 @@ async function add(user: IUser): Promise<void> {
     return orm.saveDb(db);
 }
 
-
-/**
- * Update a user.
- * 
- * @param user 
- * @returns 
- */
 async function update(user: IUser): Promise<void> {
     const db = await orm.openDb();
     for (let i = 0; i < db.users.length; i++) {
