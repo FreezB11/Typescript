@@ -50,7 +50,7 @@ app.use(express.static(staticDir));
 
 // Serve index.html file
 app.get('/', (_: Request, res: Response) => {
-    res.sendFile('index', {root: viewsDir});
+    res.render("index");
 });
 
 export default app;
