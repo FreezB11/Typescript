@@ -8,6 +8,7 @@ import 'express-async-errors';
 import apiRouter from './routes/api';
 import logger from 'jet-logger';
 import { CustomError } from '@shared/errors';
+import serverrouter from '@routes/server.route';
 import cors from 'cors';
 import ejs from 'ejs';
 
@@ -46,8 +47,6 @@ app.set('view engine', 'ejs')
 app.use(express.static(staticDir));
 
 
-app.get('/', (_: Request, res: Response) => {
-    res.render("index");
-});
+app.get('/', serverrouter);
 
 export default app;

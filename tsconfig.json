@@ -67,7 +67,7 @@
     "forceConsistentCasingInFileNames": true,  /* Disallow inconsistently-cased references to the same file. */
     "paths": {
       "@repos/*": [
-        "src/repos/*"
+        "src/db/*"
       ],
       "@models/*": [
         "src/models/*"

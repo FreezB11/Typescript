@@ -1,4 +1,4 @@
-import userRepo from '@repos/user-repo';
+import userRepo from 'src/db/user-repo';
 import { IUser } from '@models/user-model';
 import { UserNotFoundError } from '@shared/errors';
 
