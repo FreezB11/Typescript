@@ -27,13 +27,6 @@ async function getAll(): Promise<IUser[]> {
     return db.users;
 }
 
-
-/**
- * Add one user.
- * 
- * @param user 
- * @returns 
- */
 async function add(user: IUser): Promise<void> {
     const db = await orm.openDb();
     user.id = getRandomInt();
