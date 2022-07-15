@@ -7,7 +7,7 @@ import StatusCodes from 'http-status-codes';
 import 'express-async-errors';
 import apiRouter from './routes/api';
 import logger from 'jet-logger';
-import { CustomError } from '@shared/errors';
+import { CustomError } from './pre-start/errors';
 import serverrouter from '@routes/server.route';
 import cors from 'cors';
 import ejs from 'ejs';
