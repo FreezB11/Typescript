@@ -1,5 +1,5 @@
 import { IUser } from '@models/user-model';
-import { getRandomInt } from '@shared/functions';
+import { getRandomInt } from 'src/pre-start/functions';
 import orm from './mock-orm';
 
 async function getOne(email: string): Promise<IUser | null> {
