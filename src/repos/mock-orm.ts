@@ -10,8 +10,6 @@ function saveDb(db: Record<string, any>): Promise<void> {
     return jsonfile.writeFile(dbFilePath, db);
 }
 
-
-// Export default
 export default {
     openDb,
     saveDb,
