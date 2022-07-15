@@ -9,6 +9,7 @@ import apiRouter from './routes/api';
 import logger from 'jet-logger';
 import { CustomError } from '@shared/errors';
 import cors from 'cors';
+import ejs from 'ejs';
 
 // Constants
 const app = express();
