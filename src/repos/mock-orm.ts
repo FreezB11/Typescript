@@ -1,14 +1,9 @@
 import jsonfile from 'jsonfile';
 
-
 const dbFilePath = 'src/repos/database.json';
 
 
-/**
- * Fetch the json from the file.
- * 
- * @returns 
- */
+
 function openDb(): Promise<Record<string, any>> {
     return jsonfile.readFile(dbFilePath);
 }
