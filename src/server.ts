@@ -43,7 +43,7 @@ app.use((err: Error | CustomError, _: Request, res: Response, __: NextFunction) 
 
 const viewsDir = path.join(__dirname, 'views');
 app.set('views', viewsDir);
-
+app.set('view engine', 'ejs')
 // Set static dir
 const staticDir = path.join(__dirname, 'public');
 app.use(express.static(staticDir));
