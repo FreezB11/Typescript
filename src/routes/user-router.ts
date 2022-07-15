@@ -42,10 +42,6 @@ router.put(p.update, async (req: Request, res: Response) => {
     return res.status(OK).end();
 });
 
-
-/**
- * Delete one user.
- */
 router.delete(p.delete, async (req: Request, res: Response) => {
     const { id } = req.params;
     // Check param
