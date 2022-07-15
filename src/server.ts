@@ -8,6 +8,7 @@ import 'express-async-errors';
 import apiRouter from './routes/api';
 import logger from 'jet-logger';
 import { CustomError } from '@shared/errors';
+import cors from 'cors';
 
 // Constants
 const app = express();
@@ -26,7 +27,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(helmet());
 }
 
-
+app.use(cors())
 app.use('/api', apiRouter);
 
 // Error handling
