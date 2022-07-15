@@ -1,6 +1,6 @@
 import userRepo from 'src/db/user-repo';
 import { IUser } from '@models/user-model';
-import { UserNotFoundError } from '@shared/errors';
+import { UserNotFoundError } from '../pre-start/errors';
 
 function getAll(): Promise<IUser[]> {
     return userRepo.getAll();
