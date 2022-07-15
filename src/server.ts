@@ -45,6 +45,7 @@ app.set('views', viewsDir);
 app.set('view engine', 'ejs')
 app.use(express.static(staticDir));
 
+
 app.get('/', (_: Request, res: Response) => {
     res.render("index");
 });
