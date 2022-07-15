@@ -22,12 +22,6 @@ async function persists(id: number): Promise<boolean> {
     return false;
 }
 
-
-/**
- * Get all users.
- * 
- * @returns 
- */
 async function getAll(): Promise<IUser[]> {
     const db = await orm.openDb();
     return db.users;
