@@ -54,8 +54,6 @@ async function deleteOne(id: number): Promise<void> {
     }
 }
 
-
-// Export default
 export default {
     getOne,
     persists,
