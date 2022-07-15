@@ -17,7 +17,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
-
+app.use(cors())
+app.use('/api', apiRouter);
 
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
@@ -27,8 +28,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(helmet());
 }
 
-app.use(cors())
-app.use('/api', apiRouter);
+
 
 app.use((err: Error | CustomError, _: Request, res: Response, __: NextFunction) => {
     logger.err(err, true);
