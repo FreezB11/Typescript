@@ -40,9 +40,9 @@ app.use((err: Error | CustomError, _: Request, res: Response, __: NextFunction) 
 
 
 const viewsDir = path.join(__dirname, 'views');
+const staticDir = path.join(__dirname, 'public');
 app.set('views', viewsDir);
 app.set('view engine', 'ejs')
-const staticDir = path.join(__dirname, 'public');
 app.use(express.static(staticDir));
 
 app.get('/', (_: Request, res: Response) => {
