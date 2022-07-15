@@ -2,14 +2,6 @@ import { IUser } from '@models/user-model';
 import { getRandomInt } from '@shared/functions';
 import orm from './mock-orm';
 
-
-
-/**
- * Get one user.
- * 
- * @param email 
- * @returns 
- */
 async function getOne(email: string): Promise<IUser | null> {
     const db = await orm.openDb();
     for (const user of db.users) {
