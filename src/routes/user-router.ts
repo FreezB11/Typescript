@@ -15,11 +15,6 @@ export const p = {
     delete: '/delete/:id',
 } as const;
 
-
-
-/**
- * Get all users.
- */
 router.get(p.get, async (_: Request, res: Response) => {
     const users = await userService.getAll();
     return res.status(OK).json({users});
