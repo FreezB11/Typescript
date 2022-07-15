@@ -20,10 +20,6 @@ router.get(p.get, async (_: Request, res: Response) => {
     return res.status(OK).json({users});
 });
 
-
-/**
- * Add one user.
- */
 router.post(p.add, async (req: Request, res: Response) => {
     const { user } = req.body;
     // Check param
