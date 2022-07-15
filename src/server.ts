@@ -18,12 +18,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 
-// Show routes called in console during development
+
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
-// Security (helmet recommended in express docs)
 if (process.env.NODE_ENV === 'production') {
     app.use(helmet());
 }
