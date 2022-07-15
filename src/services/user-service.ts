@@ -18,13 +18,6 @@ async function updateOne(user: IUser): Promise<void> {
     return userRepo.update(user);
 }
 
-
-/**
- * Delete a user by their id.
- * 
- * @param id 
- * @returns 
- */
 async function deleteOne(id: number): Promise<void> {
     const persists = await userRepo.persists(id);
     if (!persists) {
