@@ -31,10 +31,6 @@ router.post(p.add, async (req: Request, res: Response) => {
     return res.status(CREATED).end();
 });
 
-
-/**
- * Update one user.
- */
 router.put(p.update, async (req: Request, res: Response) => {
     const { user } = req.body;
     // Check param
