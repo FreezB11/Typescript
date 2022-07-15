@@ -53,9 +53,6 @@ function getUserDisplayEle(user) {
 }
 
 
-/******************************************************************************
- *                        Add, Edit, and Delete Users
- ******************************************************************************/
 
 document.addEventListener('click', function (event) {
     event.preventDefault();
