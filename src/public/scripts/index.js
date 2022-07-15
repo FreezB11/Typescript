@@ -53,7 +53,6 @@ function getUserDisplayEle(user) {
 }
 
 
-
 document.addEventListener('click', function (event) {
     event.preventDefault();
     var ele = event.target;
