@@ -15,9 +15,69 @@
 
 // defines
 #define MAX_REQUEST_SIZE 2047
+#define SOCKET int
+#define ISVALIDSOCKET(s) ((s) >= 0)
+#define CLOSESOCKET(s) close(s)
+#define SOCKET int
+#define GETSOCKETERRNO() (errno)
+
+
+void drop_client(struct client_info *client) {
+    CLOSESOCKET(client->socket);
+
+    struct client_info **p = &clients;
+
+    while(*p) {
+        if (*p == client) {
+            *p = client->next;
+            free(client);
+            return;
+        }
+        p = &(*p)->next;
+    }
+
+    fprintf(stderr, "drop_client not found.\n");
+    exit(1);
+}
+
+// structs
+struct client_info {
+    socklen_t address_length;
+    struct sockaddr_storage address;
+    SOCKET socket;
+    char request[MAX_REQUEST_SIZE + 1];
+    int received;
+    struct client_info *next;
+};
+
+static struct client_info *clients = 0;
+
+struct client_info *get_client(SOCKET s) {
+    struct client_info *ci = clients;
+
+    while(ci) {
+        if (ci->socket == s)
+            break;
+        ci = ci->next;
+    }
+
+    if (ci) return ci;
+    struct client_info *n =
+        (struct client_info*) calloc(1, sizeof(struct client_info));
+
+    if (!n) {
+        fprintf(stderr, "Out of memory.\n");
+        exit(1);
+    }
+
+    n->address_length = sizeof(n->address);
+    n->next = clients;
+    clients = n;
+    return n;
+}
+
 
 // file type
-
 const char *file_type(const char* path) {
     const char *last_dot = strrchr(path, '.');
     if (last_dot) {
@@ -160,5 +220,8 @@ void render(struct client_info *client, const char *path) {
     fclose(fp);
     drop_client(client);
 }
+
+
+
 
 #endif
