@@ -199,7 +199,7 @@ void render(struct client_info *client, const char *path) {
     size_t cl = ftell(fp);
     rewind(fp);
 
-    const char *ct = get_content_type(full_path);
+    const char *ct = file_type(full_path);
 
 #define BSIZE 1024
     char buffer[BSIZE];
