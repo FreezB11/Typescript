@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-
+// defines
 #define MAX_REQUEST_SIZE 2047
 
 // file type
