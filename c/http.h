@@ -59,6 +59,14 @@ struct client_info *get_client(SOCKET s) {
     clients = n;
     return n;
 }
+const char *get_client_address(struct client_info *ci) {
+    static char address_buffer[100];
+    getnameinfo((struct sockaddr*)&ci->address,
+            ci->address_length,
+            address_buffer, sizeof(address_buffer), 0, 0,
+            NI_NUMERICHOST);
+    return address_buffer;
+}
 
 void drop_client(struct client_info *client) {
     CLOSESOCKET(client->socket);
