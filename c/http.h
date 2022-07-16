@@ -13,6 +13,9 @@
 #include <stdlib.h>
 #include <assert.h>
 
+
+#define MAX_REQUEST_SIZE 2047
+
 // file type
 
 const char *file_type(const char* path) {
