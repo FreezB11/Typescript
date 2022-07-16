@@ -22,23 +22,7 @@
 #define GETSOCKETERRNO() (errno)
 
 
-void drop_client(struct client_info *client) {
-    CLOSESOCKET(client->socket);
 
-    struct client_info **p = &clients;
-
-    while(*p) {
-        if (*p == client) {
-            *p = client->next;
-            free(client);
-            return;
-        }
-        p = &(*p)->next;
-    }
-
-    fprintf(stderr, "drop_client not found.\n");
-    exit(1);
-}
 
 // structs
 struct client_info {
@@ -76,7 +60,23 @@ struct client_info *get_client(SOCKET s) {
     return n;
 }
 
+void drop_client(struct client_info *client) {
+    CLOSESOCKET(client->socket);
 
+    struct client_info **p = &clients;
+
+    while(*p) {
+        if (*p == client) {
+            *p = client->next;
+            free(client);
+            return;
+        }
+        p = &(*p)->next;
+    }
+
+    fprintf(stderr, "drop_client not found.\n");
+    exit(1);
+}
 // file type
 const char *file_type(const char* path) {
     const char *last_dot = strrchr(path, '.');
