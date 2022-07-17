@@ -22,6 +22,11 @@ int main(int argc , char *argv[])
         unsigned long s_addr;
     };
 
+    struct sockaddr {
+        unsigned short sa_family;
+        char sa_data[14];
+    }
+
 
     
     */
