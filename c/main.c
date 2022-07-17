@@ -1,6 +1,7 @@
 #include<stdio.h>
-#include<sys/socket.h> 
-#include <arpa/inet.h>
+#include<string.h>	//strlen
+#include<sys/socket.h>
+#include<arpa/inet.h>	//inet_addr
 
 int main(int argc , char *argv[])
 {
@@ -9,6 +10,7 @@ int main(int argc , char *argv[])
     // AF_net -- IP4
     //sock_stream  tcp (or) sock_dgram -- UDP protocol
 	socket_desc = socket(AF_INET , SOCK_STREAM , 0);
+    char *message;
 
     /*
     struct sockaddr_in {
@@ -32,6 +34,13 @@ int main(int argc , char *argv[])
     */
     struct sockaddr_in server;
 
+    if (socket_desc == -1)
+	{
+		printf("Could not create socket");
+	}
+	
+	return 0;
+
     server.sin_addr.s_addr = inet_addr("74.125.235.20");
     server.sin_family = AF_INET;
     server.sin_port = htons( 80 );
@@ -46,10 +55,5 @@ int main(int argc , char *argv[])
 	puts("Connected");
 
     
-	if (socket_desc == -1)
-	{
-		printf("Could not create socket");
-	}
 	
-	return 0;
 }
