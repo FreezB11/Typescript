@@ -39,7 +39,7 @@ int main(int argc , char *argv[])
 		printf("Could not create socket");
 	}
 	
-	return 0;
+	
 
     server.sin_addr.s_addr = inet_addr("74.125.235.20");
     server.sin_family = AF_INET;
@@ -54,6 +54,14 @@ int main(int argc , char *argv[])
 	
 	puts("Connected");
 
-    
+    message = "GET / HTTP/1.1\r\n\r\n";
+	if( send(socket_desc , message , strlen(message) , 0) < 0)
+	{
+		puts("Send failed");
+		return 1;
+	}
+	puts("Data Send\n");
+	
+	return 0;
 	
 }
