@@ -1,5 +1,6 @@
 #include <stdlib.h>
 
 struct function {
-	char port
+	const char* port;
+	const char* host;
 };
