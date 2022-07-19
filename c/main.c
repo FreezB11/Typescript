@@ -15,7 +15,7 @@
 #define SOCKET int
 #define GETSOCKETERRNO() (errno)
 
-int create_socket(const char* host, const char *port) {
+SOCKET create_socket(const char* host, const char *port) {
     printf("Configuring local address...\n");
     struct addrinfo hints;
     memset(&hints, 0, sizeof(hints));
@@ -53,7 +53,10 @@ int create_socket(const char* host, const char *port) {
 }
 
 int main(){
-    int server = create_socket(0,"8080");
+    SOCKET server = create_socket(0,"8080");
+
+    printf("\nClosing socket...\n");
+    CLOSESOCKET(server);
 
     return 0;
 }
