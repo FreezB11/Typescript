@@ -15,8 +15,7 @@
 #define SOCKET int
 #define GETSOCKETERRNO() (errno)
 
-int main(){
-
+int create_socket(const char* host, const char *port) {
     printf("Configuring local address...\n");
     struct addrinfo hints;
     memset(&hints, 0, sizeof(hints));
@@ -25,15 +24,30 @@ int main(){
     hints.ai_flags = AI_PASSIVE;
 
     struct addrinfo *bind_address;
-    getaddrinfo(0, "8080", &hints, &bind_address);
+    getaddrinfo(host, port, &hints, &bind_address);
 
-    int socket_listen;
+    printf("Creating socket...\n");
+    SOCKET socket_listen;
     socket_listen = socket(bind_address->ai_family,
             bind_address->ai_socktype, bind_address->ai_protocol);
     if (!ISVALIDSOCKET(socket_listen)) {
         fprintf(stderr, "socket() failed. (%d)\n", GETSOCKETERRNO());
         exit(1);
     }
-    return 0;
 
+    printf("Binding socket to local address...\n");
+    if (bind(socket_listen,
+                bind_address->ai_addr, bind_address->ai_addrlen)) {
+        fprintf(stderr, "bind() failed. (%d)\n", GETSOCKETERRNO());
+        exit(1);
+    }
+    freeaddrinfo(bind_address);
+
+    printf("Listening...\n");
+    if (listen(socket_listen, 10) < 0) {
+        fprintf(stderr, "listen() failed. (%d)\n", GETSOCKETERRNO());
+        exit(1);
+    }
+
+    return socket_listen;
 }
