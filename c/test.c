@@ -1,6 +1,5 @@
 #include "http.h"
 
-
 const char *get_content_type(const char* path) {
     const char *last_dot = strrchr(path, '.');
     if (last_dot) {
