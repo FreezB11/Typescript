@@ -10,6 +10,11 @@
 #include <stdlib.h>
 #include <assert.h>
 
+#define ISVALIDSOCKET(s) ((s) >= 0)
+#define CLOSESOCKET(s) close(s)
+#define SOCKET int
+#define GETSOCKETERRNO() (errno)
+
 int main(){
 
     printf("Configuring local address...\n");
