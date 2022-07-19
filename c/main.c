@@ -51,3 +51,9 @@ int create_socket(const char* host, const char *port) {
 
     return socket_listen;
 }
+
+int main(){
+    create_socket(0,"8080");
+
+    return 0;
+}
