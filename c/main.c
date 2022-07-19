@@ -53,7 +53,7 @@ int create_socket(const char* host, const char *port) {
 }
 
 int main(){
-    create_socket(0,"8080");
+    int server = create_socket(0,"8080");
 
     return 0;
 }
