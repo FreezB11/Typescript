@@ -55,6 +55,10 @@ SOCKET create_socket(const char* host, const char *port) {
 int main(){
     SOCKET server = create_socket(0,"8080");
 
+    while(1){
+        
+    }
+
     printf("\nClosing socket...\n");
     CLOSESOCKET(server);
 
