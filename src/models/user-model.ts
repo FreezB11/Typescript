@@ -23,7 +23,6 @@ function copy(user: IUser): IUser {
     }
 }
 
-
 // Export default
 export default {
     new: getNew,
