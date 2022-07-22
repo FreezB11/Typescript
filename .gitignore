@@ -3,3 +3,4 @@ build/**/*
 .env
 src/repo/database.json
 package-lock.json
+c/ArielX
