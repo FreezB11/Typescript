@@ -7,6 +7,9 @@ OXE main()
     XDefaultRootWindow(display),
     100, 100, 200, 200, 4, 0, 0);
     
+    XStoreName(display, window, "title");
+      
+
     XEvent event;
 
     XMapWindow(display, window);
