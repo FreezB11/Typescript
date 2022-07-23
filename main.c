@@ -4,9 +4,7 @@
 int main()
 {
     Display* display = XOpenDisplay(NULL);
-    Window window = XCreateSimpleWindow(
-        display, XDefaultRootWindow(display),
-        100, 100, 200, 200, 4, 0, 0);
+    Window window = XCreateSimpleWindow(display, XDefaultRootWindow(display),100, 100, 200, 200, 4, 0, 0);
     XEvent event;
 
     XMapWindow(display, window);
