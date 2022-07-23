@@ -7,7 +7,9 @@
 #define TRUE 1
 #define FLASE 0
 
-void(char disp_name)
+void(char *disp_name){
+    
+}
 
 
 #include <X11/Xlib.h>
