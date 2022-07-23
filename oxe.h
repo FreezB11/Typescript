@@ -9,6 +9,9 @@
 
 void Create_disp(char *disp_name,char *window_name){
 
+    Display* disp_name = XOpenDisplay(NILL);
+    
+
 }
 
 
