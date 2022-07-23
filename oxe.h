@@ -7,8 +7,8 @@
 #define TRUE 1
 #define FLASE 0
 
-void(char *disp_name){
-    
+void Display(char *disp_name){
+
 }
 
 
