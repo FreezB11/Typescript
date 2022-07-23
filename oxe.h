@@ -15,11 +15,6 @@ void Create_disp(char *disp_name,char *window_name){
 }
 
 
-#include <X11/Xlib.h>
-//colour management function
-#include <X11/Xcms.h>
-#include <stdio.h>
-
 
 
 
