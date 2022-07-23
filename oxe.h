@@ -10,7 +10,7 @@
 void Create_disp(char *disp_name,char *window_name){
 
     Display* disp_name = XOpenDisplay(NILL);
-    Window window_name
+    // Window window_name = X
 
 }
 
