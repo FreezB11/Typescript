@@ -7,6 +7,8 @@ OXE main()
     XDefaultRootWindow(display),
     100, 100, 200, 200, 4, 0, 0);
     
+
+    // window title
     XStoreName(display, window, "title");
       
 
