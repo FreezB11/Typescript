@@ -12,13 +12,13 @@
 #include <X11/Xcms.h>
 #include <stdio.h>
 
-void Create_disp(char *disp_name,char *window_name){
+// void Create_disp(char *disp_name,char *window_name){
 
-    Display* disp_name = XOpenDisplay(NILL);
-    // Window window_name = X
+//     Display* disp_name = XOpenDisplay(NILL);
+//     // Window window_name = X
     
 
-}
+// }
 
 
 
