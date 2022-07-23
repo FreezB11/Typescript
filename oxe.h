@@ -1,6 +1,8 @@
 #ifndef OXE
 
 #define OXE int
+#define NILL ((void *)0)
+
 
 #define TRUE 1
 #define FLASE 0
