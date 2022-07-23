@@ -1,6 +1,6 @@
 #include "oxe.h"
 
-int main()
+OXE main()
 {
     Display* display = XOpenDisplay(NULL);
     Window window = XCreateSimpleWindow(display, XDefaultRootWindow(display),100, 100, 200, 200, 4, 0, 0);
