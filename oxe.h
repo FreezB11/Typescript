@@ -7,6 +7,11 @@
 #define TRUE 1
 #define FLASE 0
 
+#include <X11/Xlib.h>
+//colour management function
+#include <X11/Xcms.h>
+#include <stdio.h>
+
 void Create_disp(char *disp_name,char *window_name){
 
     Display* disp_name = XOpenDisplay(NILL);
