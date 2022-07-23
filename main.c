@@ -1,5 +1,4 @@
-#include <X11/Xlib.h>
-#include <stdio.h>
+#include "oxe.h"
 
 int main()
 {
