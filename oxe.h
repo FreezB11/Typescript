@@ -7,7 +7,7 @@
 #define TRUE 1
 #define FLASE 0
 
-void Create_disp(char *disp_name){
+void Create_disp(char *disp_name,char *window_name){
 
 }
 
