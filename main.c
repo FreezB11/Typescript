@@ -9,7 +9,7 @@ OXE main()
     XMapWindow(display, window);
     XSelectInput(display, window, KeyPressMask | ButtonPressMask | ExposureMask);
 
-    while (True) {
+    while (TRUE) {
       XNextEvent(display, &event);
       printf("%d\n", event.type);
     }
