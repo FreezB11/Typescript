@@ -13,7 +13,9 @@
 #include <stdio.h>
 
 
-void Create_window(){
+int Create_window(char name){
+
+    Display* XOpenDisplay(NILL);
 
 }
 
