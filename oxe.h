@@ -15,7 +15,7 @@
 
 int Create_window(char name){
 
-    Display* XOpenDisplay(NILL);
+    Display name = XOpenDisplay(NILL);
 
 }
 
