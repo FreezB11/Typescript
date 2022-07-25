@@ -13,9 +13,8 @@
 #include <stdio.h>
 
 
+void Create_window(){
 
-
-
-
+}
 
 #endif
