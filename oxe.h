@@ -20,6 +20,12 @@ int Create_window(int width, int height, char* title){
     width, height, 200, 200, 4, 0, 0);
 
     XStoreName(display, window, title);
+    XEvent event;
+    XMapWindow(display, window);
+    while (TRUE) {
+      XNextEvent(display, &event);
+      printf("%d\n", event.type);
+    }
 
     return 0;
 }
