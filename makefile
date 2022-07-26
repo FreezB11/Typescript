@@ -1,5 +1,5 @@
 CC = gcc
-FLAGS = -o main -lX11
+FLAGS = main.c -o main -lX11
 
 all:
 	${CC} ${FLAGS}
