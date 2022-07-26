@@ -14,6 +14,7 @@
 
 
 int Create_window(int width, int height){
+
     Display* display = XOpenDisplay(NILL);
     Window window = XCreateSimpleWindow(display, XDefaultRootWindow(display),
     width, height, 200, 200, 4, 0, 0);
