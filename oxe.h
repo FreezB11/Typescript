@@ -13,11 +13,10 @@
 #include <stdio.h>
 
 
-int Create_window(){
+int Create_window(int width, int height){
     Display* display = XOpenDisplay(NILL);
-    Window window = XCreateSimpleWindow(display, 
-    XDefaultRootWindow(display),
-    100, 100, 200, 200, 4, 0, 0);
+    Window window = XCreateSimpleWindow(display, XDefaultRootWindow(display),
+    width, height, 200, 200, 4, 0, 0);
 
     XStoreName(display, window, "title");
 }
