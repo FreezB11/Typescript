@@ -17,7 +17,7 @@ int Create_window(int width, int height, char* title){
 
     Display* display = XOpenDisplay(NULL);
     Window window = XCreateSimpleWindow(display, XDefaultRootWindow(display),
-    width, height, 200, 200, 4, 0, 0);
+    100, 100, width, height, 4, 0, 0);
 
     XStoreName(display, window, title);
     XEvent event;
