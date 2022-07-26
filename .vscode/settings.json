@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
     "makefile.extensionOutputFolder": "./.vscode"
+=======
+    "C_Cpp.errorSquiggles": "Disabled"
+>>>>>>> 2c9b9dd6d2c733e3d5d769b57e5ee01ea8075061
 }
