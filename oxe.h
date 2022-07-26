@@ -13,13 +13,15 @@
 #include <stdio.h>
 
 
-int Create_window(int width, int height){
+int Create_window(int width, int height, char* title){
 
-    Display* display = XOpenDisplay(NILL);
+    Display* display = XOpenDisplay(NULL);
     Window window = XCreateSimpleWindow(display, XDefaultRootWindow(display),
     width, height, 200, 200, 4, 0, 0);
 
-    XStoreName(display, window, "title");
+    XStoreName(display, window, title);
+
+    return 0;
 }
 
 #endif

@@ -10,12 +10,13 @@ OXE main()
 
     // window title
     XStoreName(display, window, "title");
-      
+
+    // Create_window(100,100,"title");
 
     XEvent event;
 
     XMapWindow(display, window);
-    XSelectInput(display, window, KeyPressMask | ButtonPressMask | ExposureMask);
+    // XSelectInput(display, window, KeyPressMask | ButtonPressMask | ExposureMask);
 
     while (TRUE) {
       XNextEvent(display, &event);
